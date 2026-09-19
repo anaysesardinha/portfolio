@@ -1,7 +1,128 @@
+/* Design tokens stay scoped to the diagram on purpose. The site itself has
+   no token layer yet, and the diagram should not be the thing that invents
+   one for every other page. */
 .wrapper {
+  --diagram-grid: rgba(0, 0, 0, 0.05);
+  --diagram-grid-size: 24px;
+  --diagram-line: var(--ifm-color-emphasis-500);
+  --diagram-line-active: var(--ifm-color-primary);
+  --diagram-node-bg: var(--ifm-background-surface-color);
+  --diagram-node-border: var(--ifm-color-emphasis-400);
+  --diagram-frame: var(--ifm-color-emphasis-200);
+  --diagram-canvas: var(--ifm-background-color);
+  --diagram-radius: 8px;
+  --diagram-duration: 180ms;
+  --diagram-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
   position: relative;
-  padding: 1.5rem 0.5rem 0.5rem;
+  padding: 2.25rem 1.25rem 1.75rem;
+  /* The frame hugs the diagram instead of the column, so the drawing reads
+     as one composed image rather than a box with dead space beside it. */
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.5rem auto;
+  border: 1px solid var(--diagram-frame);
+  border-radius: 14px;
+  background: var(--diagram-canvas);
   overflow-x: auto;
+}
+
+[data-theme='dark'] .wrapper {
+  --diagram-grid: rgba(255, 255, 255, 0.07);
+  --diagram-line: var(--ifm-color-emphasis-400);
+  --diagram-node-border: var(--ifm-color-emphasis-400);
+  --diagram-frame: var(--ifm-color-emphasis-300);
+}
+
+/* The scrolling frame is the wrapper, so the canvas is what the connectors
+   are measured against. Without it, an absolutely positioned SVG would stay
+   pinned to the visible box and drift away from the cards on scroll. */
+.canvas {
+  position: relative;
+  min-width: min-content;
+  display: flex;
+  justify-content: center;
+}
+
+/* The grid is masked to fade out before it reaches the frame, which keeps
+   it reading as texture instead of a second border. It sits on the wrapper
+   rather than the canvas so it never adds width to a scrolling diagram. */
+.wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image:
+    linear-gradient(var(--diagram-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--diagram-grid) 1px, transparent 1px);
+  background-size: var(--diagram-grid-size) var(--diagram-grid-size);
+  -webkit-mask-image: radial-gradient(
+    ellipse 78% 74% at 50% 46%,
+    #000 40%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 78% 74% at 50% 46%,
+    #000 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Blueprint corner ticks. Four spans, each drawing a thin cross. */
+.corners {
+  position: absolute;
+  inset: 0.75rem;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+}
+
+.corner::before,
+.corner::after {
+  content: '';
+  position: absolute;
+  background: var(--diagram-line);
+}
+
+.corner::before {
+  top: 4px;
+  left: 0;
+  width: 9px;
+  height: 1px;
+}
+
+.corner::after {
+  top: 0;
+  left: 4px;
+  width: 1px;
+  height: 9px;
+}
+
+.corner:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.corner:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.corner:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+
+.corner:nth-child(4) {
+  bottom: 0;
+  right: 0;
 }
 
 .connectors {
@@ -10,13 +131,57 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
+  overflow: visible;
 }
 
-.connectorPath {
+.edgeBase {
   fill: none;
-  stroke: var(--ifm-color-emphasis-400);
+  stroke: var(--diagram-line);
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+/* Drawn on top of .edgeBase and revealed by animating the dash offset.
+   pathLength="1" normalises every path to the same length, so one dash
+   value covers a short elbow and a long one alike, with no measuring. */
+.edgeActive {
+  fill: none;
+  stroke: var(--diagram-line-active);
   stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transition:
+    stroke-dashoffset var(--diagram-duration) var(--diagram-ease),
+    opacity 90ms linear;
+}
+
+.isActive {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
+
+.arrowBase {
+  fill: var(--diagram-line);
+}
+
+.arrowActive {
+  fill: var(--diagram-line-active);
+}
+
+.level {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.rootLevel {
+  position: relative;
+  z-index: 2;
+  justify-content: center;
 }
 
 .branch {
@@ -24,12 +189,10 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  z-index: 1;
   flex-shrink: 0;
 }
 
 .childrenRow {
-  display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 1.25rem;
@@ -41,6 +204,29 @@
   flex-wrap: wrap;
 }
 
+/* A fan of leaves too wide for one row. The cards stack left-aligned and
+   the connectors share one spine, so they stay readable as siblings. The
+   26px gutter matches RAIL_OFFSET in index.tsx. */
+.rail {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  margin-left: 26px;
+}
+
+.rail > .branch {
+  align-items: flex-start;
+}
+
+/* A fixed width keeps every right edge on the same line. Shrink-to-fit
+   cards would step in and out by a few pixels and read as sloppy. */
+.rail .card {
+  width: 300px;
+  min-width: 0;
+  max-width: 100%;
+}
+
 .cardWrapper {
   display: flex;
 }
@@ -48,25 +234,52 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.25rem;
   min-width: 150px;
   max-width: 210px;
-  padding: 0.7rem 0.95rem;
-  border-radius: 10px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  background: var(--ifm-background-surface-color);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--diagram-radius);
+  border: 1px solid var(--diagram-node-border);
+  background: var(--diagram-node-bg);
   text-decoration: none !important;
   color: var(--ifm-font-color-base) !important;
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    border-color 0.15s ease;
+  transition:
+    border-color var(--diagram-duration) var(--diagram-ease),
+    opacity var(--diagram-duration) var(--diagram-ease),
+    background-color var(--diagram-duration) var(--diagram-ease);
 }
 
-.card:hover,
 .card:focus-visible {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
-  border-color: var(--ifm-color-primary);
+  outline: 2px solid var(--diagram-line-active);
+  outline-offset: 3px;
+}
+
+/* Everything off the highlighted path steps back. Hover can afford a
+   stronger fade than keyboard focus, which has to leave the surrounding
+   cards readable for whoever is tabbing through them. */
+.wrapper[data-active-mode] .card[data-on-path='false'] {
+  opacity: 0.4;
+}
+
+.wrapper[data-active-mode='focus'] .card[data-on-path='false'] {
+  opacity: 0.6;
+}
+
+.card[data-on-path='true'] {
+  border-color: var(--diagram-line-active);
+}
+
+.cardKind {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.2;
+}
+
+.card[data-on-path='true'] .cardKind {
+  color: var(--diagram-line-active);
 }
 
 .cardLabel {
@@ -83,22 +296,63 @@
   font-size: 0.75rem;
   color: var(--ifm-color-emphasis-500);
   flex-shrink: 0;
+  transition: color var(--diagram-duration) var(--diagram-ease);
 }
 
-.card:hover .cardIcon {
-  color: var(--ifm-color-primary);
+.card:hover .cardIcon,
+.card[data-on-path='true'] .cardIcon {
+  color: var(--diagram-line-active);
 }
 
 .cardDescription {
   font-size: 0.78rem;
   color: var(--ifm-color-emphasis-700);
-  line-height: 1.3;
+  line-height: 1.35;
+}
+
+/* Flow layout: the same cards, laid out as a single left-to-right run. */
+.flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.5rem 3rem;
+}
+
+.flowStep {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.flowStep .card {
+  min-width: 160px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edgeActive {
+    transition: opacity 90ms linear;
+    stroke-dashoffset: 0;
+  }
+
+  .card,
+  .cardIcon {
+    transition: none;
+  }
 }
 
 /* Below this width there isn't room to keep any row side by side without
    clipping a card. Fall back to one column so every card stays fully
    visible and readable, at the cost of the tree shape. */
 @media (max-width: 480px) {
+  .wrapper {
+    padding: 1.75rem 0.75rem 1.5rem;
+  }
+
   .childrenRow {
     flex-direction: column;
     align-items: center;
@@ -106,8 +360,21 @@
     max-width: none !important;
   }
 
+  .flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .card {
     min-width: 220px;
     max-width: 280px;
+  }
+
+  /* margin-left stays at RAIL_OFFSET so the spine keeps clear of the
+     frame. Only the card width gives way on a narrow screen. */
+  .rail .card {
+    width: auto;
+    min-width: 200px;
+    max-width: 260px;
   }
 }
