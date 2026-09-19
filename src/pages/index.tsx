@@ -23,6 +23,11 @@ function HomepageHeader() {
             to="/docs/intro">
             Read the docs
           </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/meridian-logistics/about-this-sample">
+            View sample: Meridian Contract Logistics
+          </Link>
         </div>
       </div>
     </header>

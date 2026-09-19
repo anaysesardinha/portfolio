@@ -104,6 +104,10 @@ const config: Config = {
               label: 'Intro',
               to: '/docs/intro',
             },
+            {
+              label: 'Contributor Guide',
+              to: '/docs/contributor-guide',
+            },
           ],
         },
         {
