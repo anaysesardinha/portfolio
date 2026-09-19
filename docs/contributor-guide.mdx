@@ -17,22 +17,23 @@ This page is for anyone extending or reviewing the documentation on this
 site, including future me.
 :::
 
-This guide states the rules the [Meridian Contract Logistics
-sample](/docs/meridian-logistics/about-this-sample) follows, and why each
-rule exists. The goal is not just to write good pages. It is to build a
-system a team could keep running without me in the room.
+This guide states the rules behind the [Meridian Contract Logistics
+sample](/docs/meridian-logistics/about-this-sample). It also states why
+each rule exists. The goal is not just good pages. It is a system a team
+could keep running without me in the room.
 
 ## One Diataxis type per page
 
-Every page in the sample is exactly one of four types: explanation,
-how-to, reference, or SOP. A page never mixes them.
+Every page in the sample is exactly one type. A page never mixes types.
 
-Mixing types is the most common failure mode in operational docs. A
-procedure buried inside a conceptual page gets skipped by someone who
-scans for a numbered list. A definition buried inside a how-to guide gets
-missed by someone who only needed the term, not the task. Splitting by
-type means a reader can trust what they will find on a page before they
-open it.
+- Explanation pages explain ideas.
+- How-to guides show the steps for one task.
+- Reference pages define terms and list facts.
+- SOPs give a fixed procedure a team repeats exactly.
+
+Mixing types hides key details. A step buried inside a concept page gets
+skipped. A definition buried inside a how-to guide gets missed. Splitting
+by type lets a reader trust what a page holds before they open it.
 
 ## A frontmatter schema that tooling can read
 
@@ -52,22 +53,29 @@ applies_to: "All Meridian fulfillment sites"
 ---
 ```
 
-Owner and review cadence live in frontmatter, not just in prose, because a
-real team eventually wants to query this data: which pages are overdue for
-review, which team owns a given SOP, which pages a new hire needs to read
-first. Frontmatter makes that possible; a sentence buried in the page body
-does not.
+Owner and review cadence live in frontmatter, not just in prose. A real
+team can query that data later:
+
+- Which pages are overdue for review
+- Which team owns a given SOP
+- Which pages a new hire should read first
+
+A sentence buried in the page body cannot answer those questions.
+Frontmatter can.
 
 ## Named ownership, never a named person
 
-Every page names an owner **role** ("Warehouse Operations Manager"), never
-a person. People change jobs. A role survives a reorg. Documentation that
-names people goes stale the day someone leaves; documentation that names
-roles stays accurate as long as the org chart does.
+Every page names an owner role, such as "Warehouse Operations Manager."
+No page names a person.
+
+People change jobs. A role survives a reorg. Documentation that names a
+person goes stale the day that person leaves. Documentation that names a
+role stays accurate as long as the org chart does.
 
 ## Audience labeling on every page
 
-Every non-SOP page opens with an admonition stating who it is for:
+Every non-SOP page opens with an admonition. It states who the page is
+for:
 
 ```
 :::info Audience
@@ -75,8 +83,8 @@ This page is for **Warehouse Operations** and **Client Services** teams.
 :::
 ```
 
-SOPs state this through their **Applies to** line instead, so the fact is
-never stated twice on the same page.
+SOPs skip this admonition. They state audience through the **Applies to**
+line instead. That keeps the fact from appearing twice on the same page.
 
 ## One template for every SOP, no exceptions
 
@@ -97,16 +105,17 @@ Every SOP in this sample follows this exact structure:
 ## Related documents
 ```
 
-Owner, Last reviewed, Review cadence, and Applies to appear both in
-frontmatter and as bold text in the body. That is deliberate, not an
-oversight: frontmatter is what tooling reads, the bold text is what a
-person reads while standing at a workstation with a printed copy or a
-tablet, not digging through page metadata.
+Owner, Last reviewed, Review cadence, and Applies to appear twice: once
+in frontmatter, once as bold text in the body. That duplication is
+deliberate.
 
-A fixed template means a new SOP author never has to decide how to
-structure a procedure. It also means anyone auditing the docs can scan ten
-SOPs at once and know exactly where to look for the prerequisites or the
-troubleshooting steps.
+- Frontmatter is what tooling reads.
+- The bold text is what a person reads on the floor, not buried in page
+  metadata.
+
+A fixed template removes a decision. A new SOP author never has to invent
+a structure. It also helps an audit: anyone can scan ten SOPs and know
+exactly where the prerequisites or the troubleshooting steps sit.
 
 ## Procedural conventions
 
@@ -117,26 +126,31 @@ three rules:
 - State the expected outcome when it is not obvious, so the reader knows
   the step worked before moving on.
 - Place a warning immediately before the step it applies to, never after.
-  A warning that arrives after the step is too late to prevent the mistake.
+  A warning that arrives after the step is too late to prevent the
+  mistake.
 
 ## No orphan pages
 
-Every page sits in the sidebar (Docusaurus builds it automatically from
-this site's folder structure) and links to at least one related page.
-Cross-linking across Diataxis types, a how-to pointing to its SOP and to a
-glossary term, does more work than linking within a single type: it turns
-four separate sections into one connected system.
+Every page sits in the sidebar. Docusaurus builds the sidebar
+automatically from this site's folder structure. Every page also links
+to at least one related page.
+
+Cross-type links do more work than same-type links. A how-to page that
+links to its SOP and to a glossary term ties sections together. That
+turns four separate sections into one connected system.
 
 ## How consistency is enforced
 
-These rules are not just written down here. They are also encoded in a
-project-scoped Claude Code skill,
+These rules live in two places, not just this page. A project-scoped
+Claude Code skill,
 [`meridian-doc-standards`](https://github.com/anaysesardinha/portfolio/blob/main/.claude/skills/meridian-doc-standards/SKILL.md),
-checked into this repository. Every page in the sample was drafted with
-that skill active, so the same checklist ran every time instead of being
-re-applied from memory page by page. The skill is the machine-followed
-version of this guide; this page is the version meant for a person to
-read.
+encodes them too.
+
+I drafted every page in this sample with that skill active. The same
+checklist ran every time. Nothing depended on memory from page to page.
+
+The skill is the machine-followed version of this guide. This page is
+the version a person reads.
 
 ## Related
 

@@ -10,18 +10,19 @@ engineers use for code.
 ## What's here
 
 - **[Meridian Contract Logistics](docs/meridian-logistics/about-this-sample.mdx)**,
-  a full internal-documentation sample for a fictional third-party
-  logistics company, organized with the [Diataxis](https://diataxis.fr/)
-  framework (explanation, how-to guides, reference, and SOPs).
+  a fictional third-party logistics company. The sample covers one topic,
+  inbound receiving and put-away, with one page each of explanation,
+  how-to, reference, and SOP content, organized with the
+  [Diataxis](https://diataxis.fr/) framework.
 - A **[Contributor Guide](docs/contributor-guide.mdx)** describing the
   writing standards behind that sample: frontmatter schema, named
   ownership, audience labeling, and the no-orphan-pages rule.
-
-Run the site locally (see below) to browse these as rendered pages. A
-live deployed link will replace these paths once the site is published.
 - A project-scoped Claude Code skill at
   [`.claude/skills/meridian-doc-standards`](.claude/skills/meridian-doc-standards/SKILL.md),
   used to keep the sample's pages consistent while drafting.
+
+Run the site locally (see below) to browse these as rendered pages. A
+live deployed link will replace these paths once the site is published.
 
 ## Setup
 
