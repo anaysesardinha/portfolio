@@ -1,0 +1,72 @@
+---
+title: The Warehouse Lifecycle
+description: How inventory moves through a Meridian warehouse, from inbound receiving to outbound distribution.
+sidebar_position: 3
+doc_type: explanation
+audience: "Warehouse Operations, New Hires"
+owner: "Warehouse Operations Manager"
+last_reviewed: 2026-09-18
+review_cadence: Biannual
+applies_to: "All Meridian fulfillment sites"
+---
+
+# The Warehouse Lifecycle
+
+:::info Audience
+This page is for Warehouse Operations staff and new hires learning how
+inventory moves through a Meridian site.
+:::
+
+Every unit that enters a Meridian warehouse passes through four stages.
+Knowing this flow makes it easier to understand why any single procedure
+exists: each one exists to move inventory safely from one stage to the
+next.
+
+```mermaid
+flowchart LR
+    A[Inbound receiving] --> B[Storage]
+    B --> C[Order picking & pack-out]
+    C --> D[Outbound distribution]
+```
+
+## Inbound receiving
+
+A shipment arrives, gets checked against its paperwork, and gets logged
+into Wayfinder WMS (Meridian's warehouse management system). Staff verify
+quantity and condition before the shipment moves any further. A mismatch
+here becomes a receiving discrepancy, handled through its own how-to
+guide rather than worked around on the dock.
+
+## Storage
+
+Once received, inventory moves into one of three storage types:
+
+- **Ambient** storage, for goods with no temperature requirement.
+- **Climate-monitored** storage, for goods that need a controlled
+  temperature range but not full cold-chain handling.
+- **Bonded** storage, for goods held under customs control before duty is
+  paid.
+
+Which type a SKU (stock keeping unit, the identifier for a distinct
+product) uses depends on the client contract and the product itself, not
+on which space happens to be free that day.
+
+## Order picking and pack-out
+
+When an order comes in, Wayfinder WMS generates a pick list using the
+picking strategy that SKU requires (FIFO, FEFO, or FMFO, compared in the
+[picking strategy reference](/docs/meridian-logistics/reference/picking-strategy-comparison)).
+Staff pick the items, pack them, and stage them for outbound.
+
+## Outbound distribution
+
+Packed orders are verified against the original order one more time, then
+handed off to the outbound carrier. This final check is what catches a
+pick-and-pack error before it becomes a customer-facing problem, which is
+why it exists as its own step rather than an assumed part of packing.
+
+## Related
+
+- [Client account structure](/docs/meridian-logistics/explanation/client-account-structure)
+- [Picking strategy comparison](/docs/meridian-logistics/reference/picking-strategy-comparison)
+- [SOP-101: Inbound receiving and put-away](/docs/meridian-logistics/sops/sop-101-inbound-receiving-put-away)
