@@ -49,9 +49,13 @@ the reader is trying to do:
 - Look something up
 - Follow a fixed procedure
 
-Internal operational docs usually fail by mixing these. A procedure gets
-buried inside conceptual asides a reader has to skip. A reference table
-gets buried inside prose no one reads twice.
+Internal operational docs usually fail by mixing these. Two failure
+modes show up the most:
+
+- A procedure buried inside conceptual asides gets skipped by a reader
+  scanning for steps.
+- A reference table buried inside prose gets read once and never found
+  again.
 
 Enforcing one type per page removes that failure mode by construction. I
 do not have to maintain the discipline by hand on every edit.
@@ -69,20 +73,19 @@ put-away. They are:
 - One reference page.
 - One SOP.
 
-Two problems drove that cut.
+Two problems drove that cut:
 
-First, volume does not prove a template works. One fully realized SOP
-proves it as well as four would. A hiring manager needs to see
-consistency, not quantity.
+1. **Volume doesn't prove a template works.** One fully realized SOP
+   proves it as well as four would. A hiring manager needs to see
+   consistency, not quantity.
+2. **One shared topic lets a reader trace a real thread end to end:**
 
-Second, one shared topic lets a reader trace a real thread end to end:
-
-- The explanation page sets up why receiving and storage work the way
-  they do.
-- The how-to guide handles the one failure mode that comes up during
-  receiving.
-- The reference page defines where received goods get stored.
-- The SOP ties all of it into one procedure.
+   - The explanation page sets up why receiving and storage work the
+     way they do.
+   - The how-to guide handles the one failure mode that comes up during
+     receiving.
+   - The reference page defines where received goods get stored.
+   - The SOP ties all of it into one procedure.
 
 Four unrelated topics would have shown the same template four times,
 with no depth on any one process.
@@ -104,17 +107,17 @@ The skill encodes three things as a checklist:
 - The cross-linking rule
 
 I drafted every page in this sample against that checklist, including
-the pages I later cut. The same checklist ran every time. Nothing
-depended on memory from page to page. That is why the frontmatter fields
-and the SOP structure stayed identical across the whole sample.
+the pages I later cut. This produced two concrete outcomes:
 
-The repository's CI workflow builds the site and checks every link on
-every push. It uses the same `onBrokenLinks: throw` setting that caught
-broken cross-links locally while I wrote this sample. That check keeps
-the no-orphan-pages rule true over time, not just on the day I wrote it.
+- Frontmatter fields and the SOP structure stayed identical across
+  every page, since nothing depended on memory from page to page.
+- The repository's CI workflow checks every link on every push, using
+  the same `onBrokenLinks: throw` setting that caught broken cross-links
+  locally while I wrote this sample. That keeps the no-orphan-pages rule
+  true over time.
 
 ## Related
 
 - [About this sample](/docs/meridian-logistics/about-this-sample)
 - [Audience Personas](/docs/meridian-logistics/reference/audience-personas)
-- [Contributor Guide](/docs/contributor-guide)
+- [Documentation Standards](/docs/contributor-guide)

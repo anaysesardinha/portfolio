@@ -16,9 +16,9 @@ applies_to: "All Meridian fulfillment sites"
 This page is for Warehouse Operations staff receiving inbound shipments.
 :::
 
-Use this guide when a received shipment's physical count or condition
-does not match its _ASN_. An ASN, or advance shipping notice, is the
-document a supplier sends ahead of a shipment.
+Use this guide when a shipment's count or condition does not match its
+_ASN_. An ASN, or advance shipping notice, is the document a supplier
+sends ahead of a shipment.
 
 This guide assumes you already know the basic receiving flow in [The
 Warehouse Lifecycle](/docs/meridian-logistics/warehouse-lifecycle).
@@ -38,27 +38,32 @@ Warehouse Lifecycle](/docs/meridian-logistics/warehouse-lifecycle).
    record.
 
 :::warning
-Select **Damaged** as the reason only after you attach photo evidence to
-the discrepancy record. A damage claim without photos is far harder for
-Client Services to resolve with the supplier.
+Do not select **Damaged** until photos are attached. A damage claim
+without visual evidence delays Client Services' resolution with the
+supplier.
 :::
 
-6. Select a discrepancy reason from the dropdown: **Short-ship**,
-   **Over-ship**, **Damaged**, or **Mislabeled**. The discrepancy record
-   moves to **Pending Review**.
-7. Notify the Client Services contact for that account, using the
-   discrepancy record's **Notify** button. This creates a timestamped
-   record that the client was informed, separate from the internal
-   discrepancy log.
-8. Resume put-away for any line items on the same shipment that were not
-   affected. They do not need to wait on the discrepancy review.
+6. Select a discrepancy reason from the dropdown:
+
+   - **Short-ship**
+   - **Over-ship**
+   - **Damaged**
+   - **Mislabeled**
+
+   The discrepancy record moves to **Pending Review**.
+7. Select **Notify** on the discrepancy record to notify the Client
+   Services contact for that account. This creates a timestamped record
+   that the client was informed. This record is separate from the
+   internal discrepancy log.
+8. Resume put-away for any unaffected line items on the same shipment.
+   They do not need to wait on the discrepancy review.
 
 ## Expected outcome
 
 The discrepancy record moves through Wayfinder WMS from **Pending
-Review** to **Resolved** once Client Services confirms the client's
-response. Affected units stay outside sellable inventory until that
-happens.
+Review** to **Resolved**. This happens once Client Services confirms the
+client's response. Affected units stay outside sellable inventory until
+that happens.
 
 ## Related
 

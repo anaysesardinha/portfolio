@@ -69,9 +69,9 @@ Frontmatter can.
 Every page names an owner role, such as "Warehouse Operations Manager."
 No page names a person.
 
-People change jobs. A role survives a reorg. Documentation that names a
-person goes stale the day that person leaves. Documentation that names a
-role stays accurate as long as the org chart does.
+People change jobs. A role survives a reorg. Documentation naming a
+person goes stale once that person leaves. Documentation naming a role
+stays accurate as long as the org chart does.
 
 ## Audience labeling on every page
 
@@ -126,18 +126,20 @@ three rules:
 - One action per step.
 - State the expected outcome when it is not obvious, so the reader knows
   the step worked before moving on.
-- Place a warning immediately before the step it applies to, never after.
-  A warning that arrives after the step is too late to prevent the
-  mistake.
+- **Warnings precede actions:** Place a warning immediately before the
+  step it applies to, never after. A warning that arrives after the step
+  is too late to prevent the mistake.
 
 ## No orphan pages
 
-Every page sits in the sidebar. Docusaurus builds the sidebar
-automatically from this site's folder structure. Every page also links
-to at least one related page.
+Every page must:
 
-Cross-type links do more work than same-type links. A how-to page that
-links to its SOP and to a glossary term ties sections together. That
+- Sit in the sidebar. Docusaurus builds it automatically from this
+  site's folder structure.
+- Link to at least one related page.
+
+Cross-type links do more work than same-type links. A how-to page
+linking to its SOP and to a glossary term ties sections together. That
 turns four separate sections into one connected system.
 
 ## How consistency is enforced
