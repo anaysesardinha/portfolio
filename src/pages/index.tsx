@@ -11,20 +11,31 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
+    <header className={styles.hero}>
+      <div className={clsx('container', styles.heroInner)}>
+        <Heading as="h1" className={styles.heroTitle}>
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+        <p className={styles.heroRole}>
+          Technical writer for fintech & payments APIs
+          <span className={styles.cursor} aria-hidden="true">
+            |
+          </span>
+        </p>
+        <p className={styles.heroLede}>
+          I write API documentation for fintech and payments platforms,
+          and I build the tooling around it: docs-as-code pipelines,
+          reviewer automations, and AI-native integrations that make
+          documentation teams faster.
+        </p>
+        <div className={styles.actions}>
           <Link
-            className="button button--secondary button--lg"
+            className={clsx(styles.button, styles.buttonPrimary)}
             to="/docs/intro">
             Read the docs
           </Link>
           <Link
-            className="button button--secondary button--lg"
+            className={clsx(styles.button, styles.buttonGhost)}
             to="/docs/meridian-logistics/about-this-sample">
             View sample: Meridian Contract Logistics
           </Link>

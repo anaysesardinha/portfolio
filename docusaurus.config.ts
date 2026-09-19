@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Anayse Sardinha',
-  tagline: 'Technical writing & docs-as-code portfolio',
+  tagline: 'Technical writing & docs-as-code tooling for fintech & payments APIs',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
