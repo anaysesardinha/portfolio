@@ -1,0 +1,53 @@
+---
+title: Run a Cycle Count
+description: Steps to verify inventory accuracy for a scheduled cycle count.
+sidebar_position: 2
+doc_type: how-to
+audience: "Warehouse Operations"
+owner: "Warehouse Operations Manager"
+last_reviewed: 2026-09-18
+review_cadence: Quarterly
+applies_to: "All Meridian fulfillment sites"
+---
+
+# Run a Cycle Count
+
+:::info Audience
+This page is for Warehouse Operations staff assigned to a scheduled
+cycle count.
+:::
+
+A cycle count checks a subset of inventory on a rolling schedule, instead
+of counting the entire warehouse at once. Use this guide for a cycle
+count assigned to you in Wayfinder WMS.
+
+## Steps
+
+1. Open **Cycle Counts** in Wayfinder WMS and select your assigned count.
+   The system shows a list of bin locations to count that day.
+2. Count the first bin location on the list before you touch any other
+   bin. Counting out of order makes it harder to spot which count you
+   have not yet entered if you get interrupted.
+3. Enter the physical count for each SKU in that bin. Wayfinder WMS
+   compares it to the system count automatically.
+4. If the system flags a variance above the tolerance threshold, recount
+   the bin once before escalating. A single miscount is more common than
+   an actual inventory error.
+5. If the recount still shows a variance, select **Escalate Variance**.
+   See [Escalate an Inventory
+   Variance](/docs/meridian-logistics/how-to/escalate-inventory-variance)
+   for the next steps.
+6. Move to the next bin location only after the current one shows as
+   **Counted** or **Escalated** in Wayfinder WMS.
+
+## Expected outcome
+
+Every bin on your assigned list shows as **Counted** or **Escalated** by
+the end of your shift. Wayfinder WMS automatically updates system stock
+levels for any bin marked **Counted** with no variance.
+
+## Related
+
+- [Escalate an Inventory Variance](/docs/meridian-logistics/how-to/escalate-inventory-variance)
+- [Picking strategy comparison](/docs/meridian-logistics/reference/picking-strategy-comparison)
+- [Glossary](/docs/meridian-logistics/reference/glossary)
