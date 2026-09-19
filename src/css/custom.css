@@ -30,3 +30,12 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Doc cards truncate long titles and descriptions with an ellipsis by
+   default; let them wrap instead. */
+.theme-doc-card-title,
+.theme-doc-card-description {
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+}
