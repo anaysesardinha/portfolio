@@ -1,0 +1,33 @@
+---
+title: Picking Strategy Comparison
+description: A comparison of the picking strategies Wayfinder WMS supports.
+sidebar_position: 3
+doc_type: reference
+audience: "Warehouse Operations"
+owner: "Warehouse Operations Manager"
+last_reviewed: 2026-09-18
+review_cadence: Annual
+applies_to: "All Meridian fulfillment sites"
+---
+
+# Picking Strategy Comparison
+
+:::info Audience
+This page is for Warehouse Operations staff picking orders under a
+specific strategy.
+:::
+
+| Strategy | Full name | Picks based on | Best suited for |
+|---|---|---|---|
+| FIFO | First in, first out | Receipt date, oldest unit first | Non-perishable goods with no expiration concern |
+| FEFO | First expired, first out | Expiration date, soonest first | Perishable or dated goods, such as food or pharmaceuticals |
+| FMFO | First manufactured, first out | Manufacture date, oldest first | Goods that degrade with age but carry no printed expiration date |
+
+Wayfinder WMS assigns the strategy per SKU based on the client contract.
+Warehouse staff do not choose a strategy at pick time; the pick list
+Wayfinder WMS generates already reflects the correct one.
+
+## Related
+
+- [Glossary](/docs/meridian-logistics/reference/glossary)
+- [SOP-101: Inbound receiving and put-away](/docs/meridian-logistics/sops/sop-101-inbound-receiving-put-away)
