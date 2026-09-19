@@ -52,10 +52,16 @@ Every non-SOP page carries this admonition right under the H1. Fill it in for
 that specific page; do not copy the same audience onto every page.
 
 ```
-:::info Audience
+:::info[Audience]
 This page is for **Warehouse Operations** and **Client Services** teams.
 :::
 ```
+
+The title goes in brackets: `:::info[Audience]`, not `:::info Audience`.
+Docusaurus 3's admonition syntax only reads a custom title from the
+bracketed form. Without brackets, it is not valid directive syntax, and
+Docusaurus prints the raw `:::` text on the page instead of rendering a
+callout.
 
 SOPs state audience through the Applies to line in the template instead
 (Section 4). Do not add the admonition there too; that would state the same
