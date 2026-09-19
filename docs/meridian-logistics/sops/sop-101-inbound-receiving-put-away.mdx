@@ -1,0 +1,78 @@
+---
+title: "SOP-101: Inbound Receiving and Put-away"
+description: The standard procedure for receiving inbound freight and putting it into storage.
+sidebar_position: 1
+doc_type: sop
+audience: "Warehouse Operations"
+owner: "Warehouse Operations Manager"
+last_reviewed: 2026-09-18
+review_cadence: Quarterly
+applies_to: "All Meridian fulfillment sites"
+---
+
+# SOP-101: Inbound Receiving and Put-away
+
+**Owner:** Warehouse Operations Manager
+**Last reviewed:** 2026-09-18
+**Review cadence:** Quarterly
+**Applies to:** All Meridian fulfillment sites
+
+## Purpose
+
+This procedure receives inbound freight into a Meridian warehouse and
+moves it into its assigned storage location, so inventory becomes
+available for picking as soon as it clears receiving.
+
+## Prerequisites
+
+- Wayfinder WMS receiving module access
+- Dock and forklift certification for staff operating equipment
+- An ASN on file for the incoming shipment
+
+## Procedure
+
+1. Confirm the ASN in Wayfinder WMS matches the carrier's bill of lading
+   before unloading. Wayfinder WMS marks the shipment as **Expected**.
+2. Unload the shipment onto the receiving dock.
+
+:::warning
+Count unopened cartons by carton count, not by pallet weight. A weight
+estimate can hide a short-shipped carton inside an otherwise
+full-looking pallet.
+:::
+
+3. Count the received cartons against the ASN's carton count and enter
+   the count in Wayfinder WMS. Wayfinder WMS marks the shipment as
+   **Received** if the count matches.
+4. Inspect a sample of cartons for visible damage, following the site's
+   sampling rate.
+
+:::warning
+Stop put-away for any line item with a count or condition mismatch. Log
+it as a discrepancy before it moves any further.
+:::
+
+5. If every line item matches its ASN, assign each SKU to a storage
+   location using Wayfinder WMS's suggested put-away location. If a line
+   item does not match, follow [Process an Inbound Receipt
+   Discrepancy](/docs/meridian-logistics/how-to/process-inbound-receipt-discrepancy)
+   for that item instead of continuing this step for it.
+6. Move each pallet or carton to its assigned location and scan the
+   location barcode in Wayfinder WMS to confirm put-away.
+7. Confirm the shipment shows as **Putaway Complete** in Wayfinder WMS
+   once every line item has a confirmed location.
+
+## Troubleshooting
+
+| Problem | What to do |
+|---|---|
+| ASN does not match the carrier's paperwork | Do not unload. Contact the Client Services contact for that account before accepting the shipment. |
+| Wayfinder WMS shows no ASN on file | Hold the shipment at the dock and notify your shift supervisor. |
+| Suggested put-away location is already occupied | Scan the actual location used instead of the suggestion. Wayfinder WMS updates the record automatically. |
+| Carton count matches but a carton is visibly damaged | Log a condition discrepancy following [Process an Inbound Receipt Discrepancy](/docs/meridian-logistics/how-to/process-inbound-receipt-discrepancy), even though the count is correct. |
+
+## Related documents
+
+- [Process an Inbound Receipt Discrepancy](/docs/meridian-logistics/how-to/process-inbound-receipt-discrepancy)
+- [The Warehouse Lifecycle](/docs/meridian-logistics/explanation/warehouse-lifecycle)
+- [Storage Type Comparison](/docs/meridian-logistics/reference/storage-type-comparison)
