@@ -9,8 +9,9 @@ This sample exists to prove a point: a technical writer can build a documentatio
 system, not just a stack of pages. Every rule below exists to make that visible.
 Run through this checklist before writing a page, and again before calling it done.
 
-Write every sentence in this skill, and every page it produces, in active voice.
-Do not use em dashes anywhere; use a period, colon, comma, or parentheses instead.
+Write every sentence in this skill, and every page it produces, in active voice
+and in short, flat sentences (see Section 5). Do not use em dashes anywhere;
+use a period, colon, comma, or parentheses instead.
 
 ## 1. Pick one Diataxis type. Never mix
 
@@ -96,16 +97,49 @@ No SOP may skip a section of this template. If a step does not fit under
 Purpose, Prerequisites, Procedure, Troubleshooting, or Related documents,
 narrow the SOP's scope instead of adding a new section.
 
-## 5. Plain language
+## 5. Plain language: short, flat sentences
 
-- Write short sentences. Use active voice: "Scan the pallet," not "The pallet
-  should be scanned."
-- Define every domain term the first time it appears on a page, even when
-  another page already defined it. Readers rarely read pages in order.
-- Domain jargon in play: FIFO, FEFO, FMFO, WMS, FTZ, SKU, bonded warehouse,
-  kitting, drayage, 3PL, RMA, PO. Treat the Glossary reference page as the
-  canonical definition and link to it instead of re-explaining a term at
-  length.
+Write one idea per sentence. Do not stack a claim, its reason, and an
+example together with colons or subordinate clauses. Split them into
+separate short sentences, or a short list.
+
+Before (one long, layered sentence):
+
+> Mixing types is the most common failure mode in operational docs: a
+> procedure buried inside a conceptual page gets skipped by someone who
+> scans for a numbered list, and a definition buried inside a how-to
+> guide gets missed by someone who only needed the term.
+
+After (flat, listed, no buried reasoning):
+
+> Avoid mixing types in operational docs. Mixed pages hide key details
+> from readers.
+>
+> - Concepts explain ideas.
+> - Procedures show the steps.
+> - Definitions clarify terms.
+>
+> Separate your content by type so readers know what to expect before
+> they open a page.
+
+Concrete rules:
+
+- Keep most sentences under 20 words. If a sentence has more than one
+  comma-joined clause, split it into two sentences.
+- When you list a small set of categories, roles, or examples, use a
+  short bullet list instead of naming all of them inside one sentence.
+- Lead with the point. Do not build up to it with context first.
+- Cut illustrative "this happens when..." asides that justify a rule.
+  State the rule on its own; trust the reader to apply it.
+- Use active voice: "Scan the pallet," not "The pallet should be
+  scanned."
+- Define every domain term the first time it appears on a page, even
+  when another page already defined it, in its own short sentence, not
+  tucked inside a parenthetical. Readers rarely read pages in order.
+- Domain jargon in play: FIFO, FEFO, FMFO, WMS, FTZ, SKU, bonded
+  warehouse, kitting, drayage, 3PL, RMA, PO. Treat the Glossary reference
+  page as the canonical definition and link to it instead of
+  re-explaining a term at length.
 
 ## 6. Numbered steps (how-to guides and SOP Procedure sections)
 
