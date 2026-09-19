@@ -29,23 +29,28 @@ Warehouse Lifecycle](/docs/meridian-logistics/explanation/warehouse-lifecycle).
    units into storage until the discrepancy is logged. Moving them first
    makes the mismatch much harder to trace.
 2. Open the shipment's receipt record in
-   [Wayfinder WMS](/docs/meridian-logistics/reference/glossary) and
-   select **Log Discrepancy**. The system creates a discrepancy record
+   [Wayfinder WMS](/docs/meridian-logistics/reference/glossary).
+3. Select **Log Discrepancy**. The system creates a discrepancy record
    linked to that ASN.
-3. Recount the affected line items and enter the physical count. Wayfinder
+4. Recount the affected line items and enter the physical count. Wayfinder
    WMS calculates the variance automatically once you save the count.
-4. Photograph any damaged units before you enter a condition discrepancy.
-   Attach the photos to the discrepancy record. A condition claim without
-   photo evidence is far harder for Client Services to resolve with the
-   supplier.
-5. Select a discrepancy reason from the dropdown: **Short-ship**,
+5. Photograph any damaged units and attach the photos to the discrepancy
+   record.
+
+:::warning
+Select **Damaged** as the reason only after you attach photo evidence to
+the discrepancy record. A damage claim without photos is far harder for
+Client Services to resolve with the supplier.
+:::
+
+6. Select a discrepancy reason from the dropdown: **Short-ship**,
    **Over-ship**, **Damaged**, or **Mislabeled**. The discrepancy record
    moves to **Pending Review**.
-6. Notify the Client Services contact for that account, using the
+7. Notify the Client Services contact for that account, using the
    discrepancy record's **Notify** button. This creates a timestamped
    record that the client was informed, separate from the internal
    discrepancy log.
-7. Resume put-away for any line items on the same shipment that were not
+8. Resume put-away for any line items on the same shipment that were not
    affected. They do not need to wait on the discrepancy review.
 
 ## Expected outcome

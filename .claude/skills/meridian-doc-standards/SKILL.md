@@ -191,7 +191,13 @@ documentation, so this rule does not reach it.
 
 ## 7. Numbered steps (how-to guides and SOP Procedure sections)
 
-- Give one action per numbered step.
+- Give one action per numbered step. A physical action paired with
+  logging it in the system counts as one action, not two: "Count the
+  cartons and enter the count," "Photograph the damage and attach the
+  photos." The log is how the reader finishes the task, not a separate
+  task. Two actions that do not share that relationship, such as
+  opening a record and then selecting a different button, still need
+  two steps.
 - State the expected outcome of a step whenever it is not obvious ("The
   discrepancy log opens.").
 - Place any warning immediately before the step it applies to, never after.
