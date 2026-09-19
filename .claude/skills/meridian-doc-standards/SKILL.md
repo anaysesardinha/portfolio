@@ -140,12 +140,17 @@ Concrete rules:
 - Use active voice: "Scan the pallet," not "The pallet should be
   scanned."
 - Define every domain term the first time it appears on a page, even
-  when another page already defined it, in its own short sentence, not
-  tucked inside a parenthetical. Readers rarely read pages in order.
+  when another page already defined it. Readers rarely read pages in
+  order, so a term cannot lean on a definition that lives elsewhere.
 - Domain jargon in play: FIFO, FEFO, FMFO, WMS, FTZ, SKU, bonded
-  warehouse, kitting, drayage, 3PL, RMA, PO. Treat the Glossary reference
-  page as the canonical definition and link to it instead of
-  re-explaining a term at length.
+  warehouse, kitting, drayage, 3PL, RMA, PO, ASN, SLA. Treat the
+  Glossary reference page as the canonical definition.
+- On an explanation or how-to page, define the term in its own short
+  sentence, or link the term's first mention to the Glossary. On an
+  SOP or a terse how-to step, prefer linking the term's first mention
+  straight to the Glossary instead of adding a defining sentence. A
+  defining sentence dropped into an imperative step reads as a detour
+  from the action the reader is mid-way through.
 
 ## 6. Bold, italics, and code: the gold-standard split
 
