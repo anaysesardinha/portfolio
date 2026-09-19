@@ -1,22 +1,42 @@
-# Website
+# Anayse Sardinha — Technical Writing Portfolio
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+[![CI](https://github.com/anaysesardinha/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/anaysesardinha/portfolio/actions/workflows/ci.yml)
 
-## Installation
+A docs-as-code technical writing portfolio, built with
+[Docusaurus](https://docusaurus.io/). Content lives in Markdown/MDX,
+versions in Git, and ships through the same pull-request-and-CI workflow
+engineers use for code.
+
+## What's here
+
+- **[Meridian Contract Logistics](docs/meridian-logistics/about-this-sample.mdx)**,
+  a full internal-documentation sample for a fictional third-party
+  logistics company, organized with the [Diataxis](https://diataxis.fr/)
+  framework (explanation, how-to guides, reference, and SOPs).
+- A **[Contributor Guide](docs/contributor-guide.mdx)** describing the
+  writing standards behind that sample: frontmatter schema, named
+  ownership, audience labeling, and the no-orphan-pages rule.
+
+Run the site locally (see below) to browse these as rendered pages. A
+live deployed link will replace these paths once the site is published.
+- A project-scoped Claude Code skill at
+  [`.claude/skills/meridian-doc-standards`](.claude/skills/meridian-doc-standards/SKILL.md),
+  used to keep the sample's pages consistent while drafting.
+
+## Setup
 
 ```bash
 npm install
 ```
 
-**Note**: feel free to use the package manager of your choice.
-
-## Local Development
+## Local development
 
 ```bash
 npm run start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This starts a local dev server and opens a browser window. Most changes
+appear live, without a server restart.
 
 ## Build
 
@@ -24,20 +44,19 @@ This command starts a local development server and opens up a browser window. Mo
 npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This generates static files into the `build` directory and serves as the
+production build. `onBrokenLinks` is set to `throw`, so the build fails on
+any broken internal link.
 
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true npm run deploy
-```
-
-Not using SSH:
+Preview the production build locally with:
 
 ```bash
-GIT_USER=<Your GitHub username> npm run deploy
+npm run serve
 ```
 
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## Continuous integration
+
+Every push and pull request to `main` runs a GitHub Actions workflow
+(`.github/workflows/ci.yml`) that builds the site and checks for broken
+links, both internal (via the Docusaurus build) and external (via
+[lychee](https://github.com/lycheeverse/lychee)).
