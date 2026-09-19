@@ -14,7 +14,7 @@ engineers use for code.
   inbound receiving and put-away, with one page each of explanation,
   how-to, reference, and SOP content, organized with the
   [Diataxis](https://diataxis.fr/) framework.
-- A **[Contributor Guide](docs/contributor-guide.mdx)** describing the
+- **[Documentation Standards](docs/contributor-guide.mdx)** describing the
   writing standards behind that sample: frontmatter schema, named
   ownership, audience labeling, and the no-orphan-pages rule.
 - A project-scoped Claude Code skill at

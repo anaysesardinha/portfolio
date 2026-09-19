@@ -1,6 +1,6 @@
 ---
 name: meridian-doc-standards
-description: Use this skill whenever drafting, editing, or reviewing a page in the Meridian Contract Logistics documentation sample (docs/meridian-logistics/** in this portfolio repo) or the portfolio's Contributor Guide (docs/contributor-guide.mdx). It enforces Diataxis discipline, the required frontmatter schema, the exact SOP template, audience labeling, plain-language rules, and no-orphan-page cross-linking so every page in this sample stays consistent by construction. Always consult this skill before writing a new explanation, how-to, reference, or SOP page in this project, and before editing an existing one.
+description: Use this skill whenever drafting, editing, or reviewing a page in the Meridian Contract Logistics documentation sample (docs/meridian-logistics/** in this portfolio repo) or the portfolio's Documentation Standards page (docs/contributor-guide.mdx). It enforces Diataxis discipline, the required frontmatter schema, the exact SOP template, audience labeling, plain-language rules, and no-orphan-page cross-linking so every page in this sample stays consistent by construction. Always consult this skill before writing a new explanation, how-to, reference, or SOP page in this project, and before editing an existing one.
 ---
 
 # Meridian documentation standards
@@ -96,7 +96,7 @@ Links to other pages.
 Owner, Last reviewed, Review cadence, and Applies to appear both here as bold
 text and in frontmatter. That duplication is intentional, not sloppy:
 frontmatter serves tooling, this bold block serves the person reading the
-page. If you write the Contributor Guide's explanation of this pattern, state
+page. If you write the Documentation Standards page's explanation of this pattern, state
 that the duplication is deliberate so it does not read as an oversight.
 
 No SOP may skip a section of this template. If a step does not fit under
