@@ -132,11 +132,34 @@ Concrete rules:
 
 - Keep most sentences under 20 words. If a sentence has more than one
   comma-joined clause, split it into two sentences.
+- Keep the subject and its main verb close together. A relative clause
+  wedged between them ("Every unit that enters a Meridian warehouse
+  passes through four stages") makes the reader hold the subject in
+  memory while they wait for the verb. Drop the clause or move it:
+  "Every unit passes through four stages in a Meridian warehouse."
+- Break up a stack of three or more nouns with a preposition. "Wayfinder
+  WMS receiving module access" reads as one dense block. "Access to the
+  receiving module in Wayfinder WMS" reads in the order the reader
+  processes it. Same fix for "inbound discrepancy protocol" versus
+  "process for inbound receipt discrepancies."
 - When you list a small set of categories, roles, or examples, use a
   short bullet list instead of naming all of them inside one sentence.
-- Lead with the point. Do not build up to it with context first.
+- Lead with the point. Do not build up to it with context first. Cut
+  preambles that announce what a sentence is about to do instead of
+  doing it: "It is recommended that staff check the shipment" becomes
+  "Staff must check the shipment." "In order to complete put-away, you
+  will need to scan the barcode" becomes "To complete put-away, scan
+  the barcode."
+- Cut meta-referential tails that describe the instruction instead of
+  adding information: "follow the linked guide instead of continuing
+  this step for it" becomes "follow the linked guide instead."
 - Cut illustrative "this happens when..." asides that justify a rule.
   State the rule on its own; trust the reader to apply it.
+- When a paragraph enumerates parallel reasons, failure modes, or
+  outcomes ("First... Second...", or two or more sentences each making a
+  separate point), convert it to a numbered or bulleted list with a
+  one-line lead-in. Reserve prose paragraphs for a single point or a
+  narrative transition, not a stacked list of them.
 - Use active voice: "Scan the pallet," not "The pallet should be
   scanned."
 - Define every domain term the first time it appears on a page, even
