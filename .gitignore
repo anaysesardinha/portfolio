@@ -18,3 +18,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Claude Code local session files (skills are still tracked)
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
