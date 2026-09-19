@@ -17,16 +17,19 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className={styles.heroRole}>
-          Technical writer for fintech & payments APIs
+          Technical writer for SaaS, dev docs & operations
           <span className={styles.cursor} aria-hidden="true">
             |
           </span>
         </p>
         <p className={styles.heroLede}>
-          I write API documentation for fintech and payments platforms,
-          and I build the tooling around it: docs-as-code pipelines,
-          reviewer automations, and AI-native integrations that make
-          documentation teams faster.
+          I care about making technical work easy to trust. I combine an
+          instructional design background with modern engineering
+          workflows to create clear, scalable documentation. I write
+          process guides, SOPs, and developer docs. I also build the
+          infrastructure behind them: docs-as-code pipelines, reviewer
+          automations, and AI-native integrations. The result: teams
+          ship faster, and no one has to guess.
         </p>
         <div className={styles.actions}>
           <Link

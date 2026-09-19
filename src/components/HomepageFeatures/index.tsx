@@ -16,9 +16,10 @@ const FeatureList: FeatureItem[] = [
     Icon: DocsAsCodeIcon,
     description: (
       <>
-        I write content in Markdown/MDX, version it in Git, review it
-        through pull requests, and ship it through CI/CD: the same
-        workflow engineers use for code.
+        Write and manage docs in Markdown/MDX under Git version control.
+        Ship changes through pull request review and CI/CD pipelines.
+        Documentation receives the same rigorous workflows engineers use
+        for code.
       </>
     ),
   },
@@ -27,21 +28,22 @@ const FeatureList: FeatureItem[] = [
     Icon: PlaygroundIcon,
     description: (
       <>
-        I write API references from OpenAPI specs and build interactive
-        playgrounds so developers can test flows directly from the docs,
-        plus MCP integrations so AI coding assistants can query
-        documentation instead of developers searching manually.
+        Generate API references straight from OpenAPI specs. Configure
+        interactive playgrounds for direct API testing. Custom MCP
+        integrations allow AI coding assistants to query the docs
+        seamlessly.
       </>
     ),
   },
   {
-    title: 'AI-Native Review & Quality Tooling',
+    title: 'AI-Native Review & Quality',
     Icon: ReviewIcon,
     description: (
       <>
-        I build reviewer skills for content validation, API writing, and
-        code samples, backed by a scoring model for consistency, plus
-        automated link and SEO checks on every documentation pull request.
+        Implement automated rulesets and AI agents. These agents
+        validate content, API writing, and code samples using
+        consistency scoring models. Automated link validation and SEO
+        checks run on every pull request.
       </>
     ),
   },
