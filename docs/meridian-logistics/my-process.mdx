@@ -1,0 +1,75 @@
+---
+title: My Process
+description: The reasoning behind this sample's structure and scope.
+sidebar_position: 6
+doc_type: explanation
+audience: "Anyone reviewing this sample"
+owner: "Site maintainer"
+last_reviewed: 2026-09-18
+review_cadence: Annual
+applies_to: "The Meridian Contract Logistics sample"
+---
+
+# My Process
+
+:::info Audience
+This page is for anyone who wants to see the reasoning behind this
+sample, not just the finished pages.
+:::
+
+[About this sample](/docs/meridian-logistics/about-this-sample) states
+what this sample is. This page states why it looks the way it does.
+
+## Starting from the audience, not the content
+
+Before writing a single page, I defined three audiences: Warehouse
+Operations, Account Managers and Client Services, and new hires (see
+[Audience Personas](/docs/meridian-logistics/reference/audience-personas)).
+Each one needs something different from documentation: operations staff
+need exact, repeatable procedures; account managers need context for
+client conversations; new hires need background before either of those
+makes sense. That split drove the choice of information architecture
+before any page existed.
+
+## Why Diataxis
+
+Diataxis splits documentation into four types by what the reader is
+trying to do: understand, act, look something up, or follow a fixed
+procedure. Internal operational docs usually fail by mixing these: a
+procedure with conceptual asides a reader has to skip past, or a
+reference table with prose buried inside it that never gets read twice.
+Enforcing one type per page removes that failure mode by construction,
+not by discipline I have to maintain by hand on every edit.
+
+## Why one SOP instead of a library
+
+An earlier version of this brief called for four sample SOPs. I cut that
+to one. A hiring manager reviewing a portfolio sample needs to see that
+the template works and that I can apply it consistently, not that I can
+produce volume. One fully realized SOP, built to the exact template
+described in the [Contributor Guide](/docs/contributor-guide), proves the
+template. A team adopting this system would reuse that same template for
+every future SOP; the point was never the count.
+
+## How the AI-assisted workflow fit in
+
+I drafted this sample with Claude Code, using a project-scoped skill,
+[`meridian-doc-standards`](https://github.com/anaysesardinha/portfolio/blob/main/.claude/skills/meridian-doc-standards/SKILL.md),
+that encodes the frontmatter schema, the SOP template, and the
+cross-linking rule as a checklist. Every page in this sample was drafted
+against that same checklist, which is why the frontmatter fields and the
+SOP structure stay identical across roughly twenty pages instead of
+drifting the way hand-applied consistency usually does over that many
+pages.
+
+The repository's CI workflow builds the site and checks every link on
+every push, using the same `onBrokenLinks: throw` setting that caught
+broken cross-links locally while I wrote this sample. That check is what
+lets a "no orphan pages" rule stay true over time instead of just being
+true on the day it was written.
+
+## Related
+
+- [About this sample](/docs/meridian-logistics/about-this-sample)
+- [Audience Personas](/docs/meridian-logistics/reference/audience-personas)
+- [Contributor Guide](/docs/contributor-guide)
