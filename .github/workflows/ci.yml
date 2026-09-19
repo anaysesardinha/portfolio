@@ -28,7 +28,8 @@ jobs:
           args: >-
             --no-progress
             --exclude-path node_modules
-            --exclude '^/'
+            --root-dir ${{ github.workspace }}
+            --fallback-extensions mdx
             'docs/**/*.mdx'
             'blog/**/*.mdx'
             'README.md'
