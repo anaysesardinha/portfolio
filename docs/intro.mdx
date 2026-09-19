@@ -10,6 +10,9 @@ review_cadence: Annual
 applies_to: "This entire portfolio site"
 ---
 
+import TreeDiagram from '@site/src/components/TreeDiagram';
+import {siteMapData} from '@site/src/data/siteMapData';
+
 # Documentation Samples
 
 :::info[Audience]
@@ -41,31 +44,10 @@ for the context, or jump straight into the docs from the sidebar.
 
 The portfolio home links here. This page links to the Contributor Guide
 and to the Meridian Contract Logistics sample, and the sample itself
-splits into its four Diataxis sections plus a process page:
+splits into its four Diataxis sections plus a process page. Each card
+below carries its own description, and opens that page in a new tab:
 
-```mermaid
-flowchart TD
-    Home[Portfolio home] --> Intro[Documentation Samples]
-    Intro --> Guide[Contributor Guide]
-    Intro --> About[Meridian Contract Logistics]
-    About --> Process[My Process]
-    About --> Explanation[Explanation]
-    About --> HowTo[How-to Guides]
-    About --> Reference[Reference]
-    About --> SOPs[SOPs]
-```
-
-Each box breaks down like this:
-
-- _Portfolio home_: the landing page, outside this documentation
-  section.
-- _Documentation Samples_: this page, an index of every sample.
-- _Contributor Guide_: writing standards for the whole site, not one
-  sample.
-- _Meridian Contract Logistics_: the documentation sample itself.
-- _My Process_: why the sample looks the way it does.
-- _Explanation, How-to Guides, Reference, SOPs_: the four Diataxis
-  sections that hold the sample's actual content.
+<TreeDiagram data={siteMapData} />
 
 Read the [Contributor Guide](/docs/contributor-guide) for the writing
 standards behind every sample on this site. It covers:
