@@ -203,7 +203,23 @@ documentation, so this rule does not reach it.
 - Place any warning immediately before the step it applies to, never after.
   A reader needs the warning before acting, not as a postscript.
 
-## 8. No orphan pages
+## 8. Lead-ins: never drop a list, table, or diagram in cold
+
+Write a short sentence right before any list, table, or diagram,
+stating what it contains. A reader who hits a bullet list or a table
+with no setup has to infer its purpose from its contents; a lead-in
+sentence removes that guesswork.
+
+Good: "Once received, inventory moves into one of three storage
+types:" followed by the three bullets. Bad: the same three bullets
+with no sentence in front of them.
+
+Exception: a heading that already states exactly what follows, right
+above a short, self-evident list, can stand in for the sentence. A
+"## Related documents" heading above a bare links list does not also
+need a sentence saying "here are related documents."
+
+## 9. No orphan pages
 
 Every page must:
 - Sit in the right folder so the sidebar picks it up automatically (Docusaurus
@@ -214,7 +230,7 @@ Every page must:
   within the same type. Cross-type links are what make the four sections read
   as one system instead of four silos.
 
-## 9. Fixed domain vocabulary: reuse exactly, never rename
+## 10. Fixed domain vocabulary: reuse exactly, never rename
 
 - Fictional company: Meridian Contract Logistics
 - Internal WMS: Wayfinder WMS
@@ -223,13 +239,13 @@ Every page must:
 When a page names the WMS or the visibility platform, use these exact names.
 Never invent a synonym or a shortened variant.
 
-## 10. Reference pages stay narration-free
+## 11. Reference pages stay narration-free
 
 Use tables or definition lists only. Avoid "you," "let's," or prose that
 explains why something is true; that belongs on an explanation page, which
 the reference page can link to.
 
-## 11. Disclose "this is fictional" exactly once
+## 12. Disclose "this is fictional" exactly once
 
 Put the fictional-company disclosure on `about-this-sample.mdx` only. Do not
 repeat it on other pages. Repeating it reads as defensive and undercuts the
