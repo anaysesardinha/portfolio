@@ -166,6 +166,8 @@ Writing Style Guide. Both agree on the same split:
 What counts as bold in this sample:
 
 - A UI element the reader selects: **Log Discrepancy**, **Notify**.
+- An option in a dropdown, checkbox, or similar list: **Short-ship**,
+  **Over-ship**, **Damaged**, **Mislabeled**.
 - A system-generated status value shown on screen: the record moves to
   **Pending Review**.
 - A field label in the fixed SOP template: **Owner:**, **Applies to:**.
