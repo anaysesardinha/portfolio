@@ -1,0 +1,59 @@
+---
+title: Process an Inbound Receipt Discrepancy
+description: Steps to take when a received shipment does not match its paperwork.
+sidebar_position: 1
+doc_type: how-to
+audience: "Warehouse Operations"
+owner: "Warehouse Operations Manager"
+last_reviewed: 2026-09-18
+review_cadence: Quarterly
+applies_to: "All Meridian fulfillment sites"
+---
+
+# Process an Inbound Receipt Discrepancy
+
+:::info Audience
+This page is for Warehouse Operations staff receiving inbound shipments.
+:::
+
+Use this guide when a received shipment's physical count or condition
+does not match its ASN (advance shipping notice, the document a supplier
+sends ahead of a shipment). This guide assumes you already know the basic
+receiving flow described in [The Warehouse Lifecycle](/docs/meridian-logistics/explanation/warehouse-lifecycle).
+
+## Steps
+
+1. Stop put-away for the affected line items. Do not move mismatched
+   units into storage until the discrepancy is logged. Moving them first
+   makes the mismatch much harder to trace.
+2. Open the shipment's receipt record in Wayfinder WMS and select
+   **Log Discrepancy**. The system creates a discrepancy record linked to
+   that ASN.
+3. Recount the affected line items and enter the physical count. Wayfinder
+   WMS calculates the variance automatically once you save the count.
+4. Photograph any damaged units before you enter a condition discrepancy.
+   Attach the photos to the discrepancy record. A condition claim without
+   photo evidence is far harder for Client Services to resolve with the
+   supplier.
+5. Select a discrepancy reason from the dropdown (short-ship,
+   over-ship, damaged, or mislabeled). The discrepancy record moves to
+   **Pending Review**.
+6. Notify the Client Services contact for that account, using the
+   discrepancy record's **Notify** button. This creates a timestamped
+   record that the client was informed, separate from the internal
+   discrepancy log.
+7. Resume put-away for any line items on the same shipment that were not
+   affected. They do not need to wait on the discrepancy review.
+
+## Expected outcome
+
+The discrepancy record moves through Wayfinder WMS from **Pending
+Review** to **Resolved** once Client Services confirms the client's
+response. Affected units stay outside sellable inventory until that
+happens.
+
+## Related
+
+- [The Warehouse Lifecycle](/docs/meridian-logistics/explanation/warehouse-lifecycle)
+- [SOP-101: Inbound receiving and put-away](/docs/meridian-logistics/sops/sop-101-inbound-receiving-put-away)
+- [Glossary](/docs/meridian-logistics/reference/glossary)
