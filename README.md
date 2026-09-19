@@ -1,4 +1,4 @@
-# Anayse Sardinha — Technical Writing Portfolio
+# Anayse Sardinha: Technical Writing Portfolio
 
 [![CI](https://github.com/anaysesardinha/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/anaysesardinha/portfolio/actions/workflows/ci.yml)
 

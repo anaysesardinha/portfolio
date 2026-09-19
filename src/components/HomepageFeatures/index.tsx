@@ -15,9 +15,9 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Content lives in Markdown/MDX, versioned in Git, reviewed via pull
-        requests, and shipped through CI/CD — the same workflow engineers use
-        for code.
+        I write content in Markdown/MDX, version it in Git, review it
+        through pull requests, and ship it through CI/CD: the same
+        workflow engineers use for code.
       </>
     ),
   },
@@ -26,9 +26,9 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Comfortable across documentation platforms — Mintlify, Docusaurus,
-        MkDocs — choosing the right tool for the project instead of forcing
-        one stack everywhere.
+        I work comfortably across documentation platforms, including
+        Mintlify, Docusaurus, and MkDocs, and pick the right tool for the
+        project instead of forcing one stack everywhere.
       </>
     ),
   },
@@ -37,7 +37,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Writing and reviewing docs for global audiences and clients, with an
+        I write and review docs for global audiences and clients, with an
         eye for clarity, structure, and accessibility.
       </>
     ),
