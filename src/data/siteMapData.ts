@@ -9,14 +9,14 @@ export const siteMapData: DiagramNode = {
   children: [
     {
       id: 'intro',
-      label: 'Documentation Samples',
+      label: 'Writing Samples',
       description: 'This page, an index of every sample.',
       href: '/docs/intro',
       kind: 'Index',
       children: [
         {
           id: 'guide',
-          label: 'Contributor Guide',
+          label: 'Documentation Standards',
           description: 'Writing standards for the whole site.',
           href: '/docs/contributor-guide',
           kind: 'Standards',

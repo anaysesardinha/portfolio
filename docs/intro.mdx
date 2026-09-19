@@ -1,5 +1,5 @@
 ---
-title: Documentation Samples
+title: Writing Samples
 description: An index of the documentation samples in this portfolio.
 sidebar_position: 1
 doc_type: explanation
@@ -12,17 +12,16 @@ applies_to: "This entire portfolio site"
 
 import TreeDiagram from '@site/src/components/TreeDiagram';
 import {siteMapData} from '@site/src/data/siteMapData';
+import DocCardList from '@theme/DocCardList';
 
-# Documentation Samples
+# Writing Samples
 
 :::info[Audience]
 This page is for anyone browsing this portfolio, before they pick a
 sample to read.
 :::
 
-This section holds full documentation samples, not isolated writing
-snippets. Each sample shows a complete system, not just a handful of
-pages:
+Each sample here is a full documentation system. It includes:
 
 - Information architecture
 - A consistent template
@@ -31,27 +30,28 @@ pages:
 
 ## Available samples
 
-### Meridian Contract Logistics
+<DocCardList items={[
+  {
+    type: 'link',
+    label: 'Meridian Contract Logistics',
+    href: '/docs/meridian-logistics/about-this-sample',
+    description: 'An internal operations documentation set for a fictional third-party logistics company. Covers inbound receiving and put-away end to end, for warehouse staff and new hires.',
+  },
+]} />
 
-An internal operations documentation set for a fictional third-party
-logistics company. It covers one topic end to end: inbound receiving and
-put-away, for warehouse staff and new hires.
-
-Start with [About this sample](/docs/meridian-logistics/about-this-sample)
-for the context, or jump straight into the docs from the sidebar.
+---
 
 ## How this site is put together
 
-The portfolio home links here. This page links to the Contributor Guide
-and to the Meridian Contract Logistics sample, and the sample itself
-splits into its four Diataxis sections plus a process page. Each card
-below names its page type, carries its own description, and opens that
-page in a new tab. Point at a card, or tab to it, and the diagram traces
-the route back to the portfolio home:
+The portfolio home links here. This page links to Documentation Standards
+and to the Meridian Contract Logistics sample. The sample itself splits
+into four Diataxis sections, plus a process page. The cards below map
+the sample. Hovering or tabbing over a card traces its
+relationship back to the portfolio home:
 
 <TreeDiagram data={siteMapData} />
 
-Read the [Contributor Guide](/docs/contributor-guide) for the writing
+Read [Documentation Standards](/docs/contributor-guide) for the writing
 standards behind every sample on this site. It covers:
 
 - How pages are structured
