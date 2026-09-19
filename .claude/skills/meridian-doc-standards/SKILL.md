@@ -147,22 +147,40 @@ Concrete rules:
   page as the canonical definition and link to it instead of
   re-explaining a term at length.
 
-## 6. Bold: for UI elements and status values, never a whole sentence
+## 6. Bold, italics, and code: the gold-standard split
 
-Bold marks something the reader would see on screen, or a fixed label:
+This rule follows the Google developer style guide and the Microsoft
+Writing Style Guide. Both agree on the same split:
 
-- A UI element the reader clicks or selects: **Log Discrepancy**,
-  **Notify**.
-- A system-generated status value: the record moves to **Pending
-  Review**.
+- **Bold** marks a literal UI element or a fixed field label. Nothing
+  else.
+- _Italics_ mark a term the text is about to define, or a title.
+- `Code font` marks something the reader types or copies exactly:
+  commands, filenames, code.
+
+What counts as bold in this sample:
+
+- A UI element the reader selects: **Log Discrepancy**, **Notify**.
+- A system-generated status value shown on screen: the record moves to
+  **Pending Review**.
 - A field label in the fixed SOP template: **Owner:**, **Applies to:**.
-- A key term at the start of a list item, when the list works like a
-  mini glossary: **Explanation** for background a reader needs.
 
-Never bold a whole sentence for emphasis. It dilutes the signal bold is
-supposed to carry, and a reader cannot tell what actually matters on a
-page where every sentence looks the same. If a sentence needs emphasis,
-rewrite it to lead with the point instead of decorating it with bold.
+What does not count as bold, even though earlier drafts used it that
+way:
+
+- A role or team name, such as Warehouse Operations or Account Manager.
+  It is not a UI element. Leave it as plain text.
+- A category name at the start of a list item, such as Explanation or
+  Reference, when the rest of the item defines it. Use italics instead:
+  _Explanation_ for background a reader needs. That matches the
+  first-mention-of-a-term rule both style guides use.
+- A whole sentence, for emphasis. Bold on every important sentence
+  reads the same as bold on nothing: the reader loses the signal. If a
+  sentence needs emphasis, lead with the point instead of decorating it.
+
+A portfolio README bulleting its own sections (for example, bolding a
+linked project name in a bullet list) is a different genre from product
+documentation, so this rule does not reach it.
 
 ## 7. Numbered steps (how-to guides and SOP Procedure sections)
 
