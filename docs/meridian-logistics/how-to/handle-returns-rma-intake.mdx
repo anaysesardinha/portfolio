@@ -1,0 +1,55 @@
+---
+title: Handle a Returns (RMA) Intake
+description: Steps to process an incoming return under an active RMA.
+sidebar_position: 4
+doc_type: how-to
+audience: "Warehouse Operations"
+owner: "Warehouse Operations Manager"
+last_reviewed: 2026-09-18
+review_cadence: Quarterly
+applies_to: "All Meridian fulfillment sites"
+---
+
+# Handle a Returns (RMA) Intake
+
+:::info Audience
+This page is for Warehouse Operations staff receiving a returned unit
+under an RMA.
+:::
+
+An RMA (return merchandise authorization) is a client's approval for a
+specific unit to come back into a Meridian warehouse. Do not accept a
+return without a matching RMA number; an unauthorized return has no
+record for Wayfinder WMS to check the unit against.
+
+## Steps
+
+1. Look up the RMA number on the return label in Wayfinder WMS before
+   opening the package. If the RMA does not exist or is already closed,
+   hold the package at the returns desk and notify your supervisor
+   instead of processing it further.
+2. Open the package and inspect the unit's condition against the RMA
+   record's expected condition (new, opened, or damaged).
+3. Photograph the unit if its actual condition does not match the RMA
+   record. A mismatched condition changes how the client gets credited,
+   so the photo becomes part of that decision.
+4. Select the intake disposition in Wayfinder WMS: **Restock**,
+   **Refurbish**, or **Scrap**. Restock returns the unit to sellable
+   inventory; the other two dispositions do not.
+5. Print and attach a new location label if the disposition is
+   **Restock**. Do not reuse the original shipping label; Wayfinder WMS
+   tracks the unit as a new putaway from this point.
+6. Close the RMA in Wayfinder WMS once the unit reaches its disposition
+   location. ClearLane Visibility updates the client's return status
+   automatically when the RMA closes.
+
+## Expected outcome
+
+The RMA record shows **Closed** in Wayfinder WMS, and the unit sits in
+the location matching its disposition: back in sellable storage for
+Restock, or in the appropriate holding area for Refurbish or Scrap.
+
+## Related
+
+- [Document Types and Locations](/docs/meridian-logistics/reference/document-types-and-locations)
+- [Glossary](/docs/meridian-logistics/reference/glossary)
