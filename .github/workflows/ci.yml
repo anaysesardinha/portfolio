@@ -28,6 +28,7 @@ jobs:
           args: >-
             --no-progress
             --exclude-path node_modules
+            --exclude '^/'
             'docs/**/*.mdx'
             'blog/**/*.mdx'
             'README.md'
