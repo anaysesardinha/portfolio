@@ -41,26 +41,37 @@ reference table with prose buried inside it that never gets read twice.
 Enforcing one type per page removes that failure mode by construction,
 not by discipline I have to maintain by hand on every edit.
 
-## Why one SOP instead of a library
+## Why one of each type, on one connected topic
 
-An earlier version of this brief called for four sample SOPs. I cut that
-to one. A hiring manager reviewing a portfolio sample needs to see that
-the template works and that I can apply it consistently, not that I can
-produce volume. One fully realized SOP, built to the exact template
-described in the [Contributor Guide](/docs/contributor-guide), proves the
-template. A team adopting this system would reuse that same template for
-every future SOP; the point was never the count.
+An earlier version of this sample covered four SOPs, seven how-to guides,
+and several unrelated explanation and reference pages. I cut it down to
+one explanation page, one how-to guide, one reference page, and the one
+SOP, all tied to a single topic: inbound receiving and put-away.
+
+Two separate problems drove that cut. First, a hiring manager reviewing a
+portfolio sample needs to see that a template works and that I apply it
+consistently, not that I can produce volume; one fully realized SOP proves
+the template as well as four would. Second, once every page circles the
+same topic, a reviewer can trace one real thread end to end: the
+explanation page sets up why receiving and storage work the way they do,
+the how-to guide handles the one failure mode that comes up during
+receiving, the reference page defines where received goods actually get
+stored, and the SOP ties all of it into one procedure. Spreading the same
+four pages across four unrelated topics would have shown the same
+template four times, but no depth on any one process. The Glossary and
+Audience Personas pages stay in as supporting reference material, since
+they serve every topic rather than one, not as additional topic content.
 
 ## How the AI-assisted workflow fit in
 
 I drafted this sample with Claude Code, using a project-scoped skill,
 [`meridian-doc-standards`](https://github.com/anaysesardinha/portfolio/blob/main/.claude/skills/meridian-doc-standards/SKILL.md),
 that encodes the frontmatter schema, the SOP template, and the
-cross-linking rule as a checklist. Every page in this sample was drafted
-against that same checklist, which is why the frontmatter fields and the
-SOP structure stay identical across roughly twenty pages instead of
-drifting the way hand-applied consistency usually does over that many
-pages.
+cross-linking rule as a checklist. Every page in this sample, including
+the pages I later cut, was drafted against that same checklist, which is
+why the frontmatter fields and the SOP structure stayed identical across
+every page instead of drifting the way hand-applied consistency usually
+does once a sample grows past a couple of pages.
 
 The repository's CI workflow builds the site and checks every link on
 every push, using the same `onBrokenLinks: throw` setting that caught
