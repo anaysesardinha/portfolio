@@ -147,7 +147,24 @@ Concrete rules:
   page as the canonical definition and link to it instead of
   re-explaining a term at length.
 
-## 6. Numbered steps (how-to guides and SOP Procedure sections)
+## 6. Bold: for UI elements and status values, never a whole sentence
+
+Bold marks something the reader would see on screen, or a fixed label:
+
+- A UI element the reader clicks or selects: **Log Discrepancy**,
+  **Notify**.
+- A system-generated status value: the record moves to **Pending
+  Review**.
+- A field label in the fixed SOP template: **Owner:**, **Applies to:**.
+- A key term at the start of a list item, when the list works like a
+  mini glossary: **Explanation** for background a reader needs.
+
+Never bold a whole sentence for emphasis. It dilutes the signal bold is
+supposed to carry, and a reader cannot tell what actually matters on a
+page where every sentence looks the same. If a sentence needs emphasis,
+rewrite it to lead with the point instead of decorating it with bold.
+
+## 7. Numbered steps (how-to guides and SOP Procedure sections)
 
 - Give one action per numbered step.
 - State the expected outcome of a step whenever it is not obvious ("The
@@ -155,7 +172,7 @@ Concrete rules:
 - Place any warning immediately before the step it applies to, never after.
   A reader needs the warning before acting, not as a postscript.
 
-## 7. No orphan pages
+## 8. No orphan pages
 
 Every page must:
 - Sit in the right folder so the sidebar picks it up automatically (Docusaurus
@@ -166,7 +183,7 @@ Every page must:
   within the same type. Cross-type links are what make the four sections read
   as one system instead of four silos.
 
-## 8. Fixed domain vocabulary: reuse exactly, never rename
+## 9. Fixed domain vocabulary: reuse exactly, never rename
 
 - Fictional company: Meridian Contract Logistics
 - Internal WMS: Wayfinder WMS
@@ -175,13 +192,13 @@ Every page must:
 When a page names the WMS or the visibility platform, use these exact names.
 Never invent a synonym or a shortened variant.
 
-## 9. Reference pages stay narration-free
+## 10. Reference pages stay narration-free
 
 Use tables or definition lists only. Avoid "you," "let's," or prose that
 explains why something is true; that belongs on an explanation page, which
 the reference page can link to.
 
-## 10. Disclose "this is fictional" exactly once
+## 11. Disclose "this is fictional" exactly once
 
 Put the fictional-company disclosure on `about-this-sample.mdx` only. Do not
 repeat it on other pages. Repeating it reads as defensive and undercuts the
