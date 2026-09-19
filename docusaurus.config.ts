@@ -98,30 +98,8 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Intro',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Contributor Guide',
-              to: '/docs/contributor-guide',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/anaysesardinha/portfolio',
-            },
-          ],
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/anayse-sardinha-7881997b/',
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Anayse Sardinha. Built with Docusaurus.`,
