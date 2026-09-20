@@ -1,5 +1,5 @@
 ---
-title: "SOP-101: Inbound Receiving and Put-away"
+title: "SOP-101: Inbound receiving and put-away"
 description: The standard procedure for receiving inbound freight and putting it into storage.
 sidebar_position: 5
 doc_type: sop
@@ -10,7 +10,7 @@ review_cadence: Quarterly
 applies_to: "All Meridian fulfillment sites"
 ---
 
-# SOP-101: Inbound Receiving and Put-away
+# SOP-101: Inbound receiving and put-away
 
 | Field | Value |
 |---|---|
@@ -29,11 +29,10 @@ clears receiving.
 
 Before starting this procedure, confirm you have:
 
-- Access to the receiving module in [Wayfinder
-  WMS](/docs/meridian-logistics/reference/glossary)
+- Access to the receiving module in Wayfinder WMS, Meridian's
+  warehouse management system
 - Dock and forklift certification for staff operating equipment
-- An [ASN](/docs/meridian-logistics/reference/glossary) on file for the
-  incoming shipment
+- An advance shipping notice (ASN) on file for the incoming shipment
 
 ## Procedure
 
@@ -60,16 +59,12 @@ Stop put-away for any line item with a count or condition mismatch. Log
 it as a discrepancy before it moves any further.
 :::
 
-5. If every line item matches its ASN, assign each
-   [SKU](/docs/meridian-logistics/reference/glossary) to a storage
-   location using Wayfinder WMS's suggested put-away location. If a line
-   item does not match, follow [Process an Inbound Receipt
-   Discrepancy](/docs/meridian-logistics/process-inbound-receipt-discrepancy)
-   for that item instead.
+5. Assign each stock keeping unit (SKU) to a storage location using
+   Wayfinder WMS's suggested put-away location.
 6. Move each pallet or carton to its assigned location and scan the
    location barcode in Wayfinder WMS to confirm put-away.
 7. Confirm the shipment shows as **Putaway Complete** in Wayfinder WMS
-   once every line item has a confirmed location.
+   after every line item has a confirmed location.
 
 ## Troubleshooting
 
@@ -79,11 +74,12 @@ Common failure points in this procedure, and what to do about each:
 |---|---|
 | ASN does not match the carrier's paperwork | Do not unload. Contact the Client Services contact for that account before accepting the shipment. |
 | Wayfinder WMS shows no ASN on file | Hold the shipment at the dock and notify your shift supervisor. |
-| Suggested put-away location is already occupied | Scan the actual location used instead of the suggestion. Wayfinder WMS updates the record automatically. |
-| Carton count matches but a carton is visibly damaged | Log a condition discrepancy following [Process an Inbound Receipt Discrepancy](/docs/meridian-logistics/process-inbound-receipt-discrepancy), even though the count is correct. |
+| A line item's count or condition does not match its ASN | Do not assign it a storage location. Follow [Process an inbound receipt discrepancy](/docs/meridian-logistics/process-inbound-receipt-discrepancy) for that item instead. |
+| Suggested put-away location is already occupied | Scan the location you actually use instead of the suggestion. Wayfinder WMS updates the record automatically. |
+| Carton count matches but a carton is visibly damaged | Log a condition discrepancy following [Process an inbound receipt discrepancy](/docs/meridian-logistics/process-inbound-receipt-discrepancy), even though the count is correct. |
 
 ## Related documents
 
-- [Process an Inbound Receipt Discrepancy](/docs/meridian-logistics/process-inbound-receipt-discrepancy)
-- [The Warehouse Lifecycle](/docs/meridian-logistics/warehouse-lifecycle)
-- [Storage Type Comparison](/docs/meridian-logistics/reference/storage-type-comparison)
+- [Process an inbound receipt discrepancy](/docs/meridian-logistics/process-inbound-receipt-discrepancy)
+- [The warehouse lifecycle](/docs/meridian-logistics/warehouse-lifecycle)
+- [Storage type comparison](/docs/meridian-logistics/reference/storage-type-comparison)

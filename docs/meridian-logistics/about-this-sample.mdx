@@ -18,12 +18,11 @@ and other technical writers.
 :::
 
 Meridian Contract Logistics is a fictional company. Nothing on the
-following pages describes a real business, a real client, or real
-proprietary material.
+following pages describes a real business, client, or proprietary
+material.
 
 I built this sample to show how I approach internal operational
-documentation. I picked a subject with real complexity, so the
-demonstration would mean something.
+documentation.
 
 ## Why contract logistics
 
@@ -31,12 +30,15 @@ Contract logistics is the outsourced management of warehousing,
 inventory, and distribution under a client contract. It is complex, in
 ways that matter for documentation:
 
-- It has overlapping systems.
-- It has a specialized vocabulary.
-- A missed step can carry a real operational cost.
+- **Overlapping systems**: a warehouse management system, a client's
+  inventory system, and carrier systems all have to stay in sync.
+- **Specialized vocabulary**: terms like FIFO, ASN, and bonded storage
+  carry precise operational meaning.
+- **High stakes**: a missed step can carry a significant operational
+  cost.
 
 That combination makes it a good subject. It shows how to turn a messy
-domain into documentation a team can run without me in the room.
+domain into clear, repeatable documentation.
 
 ## Who this sample is for
 
@@ -50,19 +52,19 @@ It assumes a mixed technical level. It is not customer-facing.
 
 Two habits keep that mix working. Every page states its intended
 audience up front, so a reader knows fast whether a page is for them.
-Every domain term gets defined the first time it appears on a page,
-even when another page already defined it. A new hire never has to
-guess a term a warehouse veteran already knows.
+Every page defines its domain terms the first time they appear, even
+when another page already defined the same term. A new hire never has
+to guess a term a warehouse veteran already knows.
 
-I defined these three audiences before writing a single page. Their
-differing needs, listed on [Audience
-Personas](/docs/meridian-logistics/reference/audience-personas), drove
-the sample's information architecture.
+I defined these three audiences before writing a single page. [Audience
+Personas](/docs/meridian-logistics/reference/audience-personas) lists
+their differing needs, which drove the sample's information
+architecture.
 
 ## How it is organized
 
-The sample follows the [Diataxis](https://diataxis.fr/) framework, split
-into four types that never mix on one page:
+The sample follows the [Diataxis](https://diataxis.fr/) framework and
+splits into four types that never mix on one page:
 
 - **Explanation** for background a reader needs before acting.
 - **How-to guides** for a single task, aimed at someone who already
@@ -70,6 +72,13 @@ into four types that never mix on one page:
 - **Reference** for lookup material: tables and definitions, no
   narrative.
 - **SOPs** for procedures a team must run the same way every time.
+
+Diataxis calls its fourth quadrant Tutorials: a lesson that teaches a
+beginner by doing. Contract logistics does not teach that way. A new
+hire learns receiving and put-away through supervised training on the
+floor, not a reading exercise. This sample replaces Tutorials with
+SOPs, since the business needs a fixed procedure a team runs the same
+way every time, not a lesson.
 
 The [Documentation Standards](/docs/contributor-guide) page states the full set of
 standards behind this structure. It covers ownership, review cadence, and
@@ -87,26 +96,26 @@ with exactly one page per Diataxis type:
 
 Two reasons drive that scope:
 
-1. **Volume doesn't prove a template works.** One fully realized SOP
+1. **Volume does not prove a template works.** One fully realized SOP
    proves it as well as four would. A hiring manager needs to see
    consistency, not quantity.
-2. **One shared topic lets a reader trace a real thread end to end:**
+2. **One shared topic lets a reader trace a thread end to end:**
 
    - The explanation page sets up why receiving and storage work the
      way they do.
    - The how-to guide handles the one failure mode that comes up during
      receiving.
-   - The reference page defines where received goods get stored.
+   - The reference page defines where staff store received goods.
    - The SOP ties all of it into one procedure.
 
 Four unrelated topics would show the same template four times, with no
 depth on any one process.
 
-The Glossary and Audience Personas pages stay in as supporting material.
-They serve every topic, not just this one, so they do not count as
-additional topic content.
+The Audience personas page stays in as supporting material. It serves
+every topic, not just this one, so it does not count as additional
+topic content.
 
 ## Related
 
 - [Documentation Standards](/docs/contributor-guide)
-- [Audience Personas](/docs/meridian-logistics/reference/audience-personas)
+- [Audience personas](/docs/meridian-logistics/reference/audience-personas)

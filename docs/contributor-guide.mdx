@@ -19,25 +19,60 @@ this sample, including hiring managers and other technical writers.
 
 This guide states the rules behind the [Meridian Contract Logistics
 sample](/docs/meridian-logistics/about-this-sample) and why each rule
-exists. The goal is a system a team could run without me in the room.
+exists.
 
-## One Diataxis type per page
+## Standards
 
-Every page in the sample is exactly one type. A page never mixes types.
-The four types are:
+Every rule behind this sample, and why it exists, grouped by what each
+one governs.
 
-- Explanation pages explain ideas.
-- How-to guides show the steps for one task.
-- Reference pages define terms and list facts.
-- SOPs give a fixed procedure a team repeats exactly.
+### Structure and metadata
 
-Mixing types hides key details. A step buried inside a concept page gets
-skipped. A definition buried inside a how-to guide gets missed. Splitting
-by type lets a reader trust what a page holds before they open it.
+Rules that keep every page's shape and frontmatter predictable:
 
-## A frontmatter schema that tooling can read
+| Rule | Why |
+|---|---|
+| Every page is exactly one Diataxis type: **explanation**, **how-to**, **reference**, or **SOP**. A page never mixes types. | Mixing types hides key details. Readers scanning a concept page for steps skip past one buried there. Readers scanning a how-to guide for steps miss a definition buried there. |
+| Every page carries a frontmatter schema, including `doc_type`, `owner`, `last_reviewed`, `review_cadence`, and `applies_to`. | Frontmatter lets tooling query which pages are overdue for review, which team owns a page, and which pages a new hire should read first. |
+| The `owner` field always names a role, such as "Warehouse Operations Manager," never a person. | People change jobs. A role survives a reorg. A named person goes stale once they leave that role. |
+| Every non-SOP page opens with an Audience admonition. SOPs state audience through their **Applies to** line instead. | Stating audience twice on the same SOP page would repeat the same fact for no reason. |
+| Every SOP follows the same template: Purpose, Prerequisites, Procedure, Troubleshooting, Related documents. | A fixed template removes a decision for new authors and speeds up an audit. Anyone can scan ten SOPs and know exactly where each section sits. |
+| **Owner**, **Last reviewed**, **Review cadence**, and **Applies to** each appear twice on an SOP: once in frontmatter, once in a table in the page body. | Frontmatter is what tooling reads. The table is what a person reads on the floor, not the page's raw metadata. |
 
-Every page in the sample carries this frontmatter:
+### Writing
+
+Rules that keep steps and prose consistent:
+
+| Rule | Why |
+|---|---|
+| A numbered step holds one action. | Combining two actions into one step hides whether the reader completed both of them. |
+| A step states the expected outcome when it is not obvious. | The reader needs to know the step worked before moving to the next one. |
+| A warning appears immediately before the step it applies to, never after. | A warning that arrives after the step is too late to prevent the mistake. |
+| Every page defines each domain term inline, in a short comma clause, the first time it appears. There is no shared glossary page to defer to. | A reader shouldn't have to leave the page they're using to understand a term. |
+
+### Cross-linking
+
+Rules that connect the four page types into one system:
+
+| Rule | Why |
+|---|---|
+| Every page links to at least one related page, favoring links across Diataxis types over links within the same type. | Cross-type links turn the four types into one connected system instead of four separate silos. |
+| Related links sit under a **Related** (or **Related documents**) heading, as a bare list of link titles, with no sentence describing what each one covers. This rule applies site-wide, not only inside the sample. | A reader scanning for where to go next needs the link, not a summary of the destination. The summary already lives on that page. |
+
+### Enforcement
+
+Rules that keep every rule above from depending on memory:
+
+| Rule | Why |
+|---|---|
+| These rules live on this page and in a Claude Code skill, [`meridian-doc-standards`](https://github.com/anaysesardinha/portfolio/blob/main/.claude/skills/meridian-doc-standards/SKILL.md). | The same checklist runs every time someone drafts a page, so nothing depends on memory from page to page. |
+| A [`docs-standards` GitHub Actions job](https://github.com/anaysesardinha/portfolio/blob/main/.github/workflows/ci.yml) blocks a pull request if a page is missing a required frontmatter field, such as `owner` or `review_cadence`, breaks the SOP template, or has no link to another page. A separate `link-check` job blocks it on any broken internal link. | The skill helps at drafting time, but deadline pressure can still push someone to skip a rule that only lives in a skill or a person's memory. Deadline pressure cannot push past a CI check that fails the build. |
+
+## Templates
+
+These are the literal formats the standards above produce.
+
+Every page carries this frontmatter:
 
 ```yaml
 ---
@@ -53,29 +88,8 @@ applies_to: "All Meridian fulfillment sites"
 ---
 ```
 
-Owner and review cadence live in frontmatter, not just in prose. A real
-team can query that data later:
-
-- Which pages are overdue for review
-- Which team owns a given SOP
-- Which pages a new hire should read first
-
-A sentence buried in the page body cannot answer those questions.
-Frontmatter can.
-
-## Named ownership, never a named person
-
-Every page names an owner role, such as "Warehouse Operations Manager."
-No page names a person.
-
-People change jobs. A role survives a reorg. Documentation naming a
-person goes stale once that person leaves. Documentation naming a role
-stays accurate as long as the org chart does.
-
-## Audience labeling on every page
-
-Every non-SOP page opens with an admonition. It states who the page is
-for:
+Every non-SOP page opens with this admonition; fill it in for that
+specific page:
 
 ```
 :::info[Audience]
@@ -83,12 +97,7 @@ This page is for Warehouse Operations and Client Services teams.
 :::
 ```
 
-SOPs skip this admonition. They state audience through the **Applies to**
-line instead. That keeps the fact from appearing twice on the same page.
-
-## One template for every SOP, no exceptions
-
-Every SOP in this sample follows this exact structure:
+Every SOP follows this exact structure:
 
 ```markdown
 # SOP-XXX: [Title]
@@ -106,58 +115,6 @@ Every SOP in this sample follows this exact structure:
 ## Troubleshooting
 ## Related documents
 ```
-
-Owner, Last reviewed, Review cadence, and Applies to appear twice: once
-in frontmatter, once in a small table in the body. That duplication is
-deliberate, for two reasons:
-
-- Frontmatter is what tooling reads.
-- The table is what a person reads on the floor, not buried in page
-  metadata.
-
-A fixed template removes a decision. A new SOP author never has to invent
-a structure. It also helps an audit: anyone can scan ten SOPs and know
-exactly where the prerequisites or the troubleshooting steps sit.
-
-## Procedural conventions
-
-Numbered steps in a how-to guide or an SOP's Procedure section follow
-three rules:
-
-- One action per step.
-- State the expected outcome when it is not obvious, so the reader knows
-  the step worked before moving on.
-- Place a warning immediately before the step it applies to, never
-  after. A warning that arrives after the step is too late to prevent
-  the mistake.
-
-## No orphan pages
-
-Every page must:
-
-- Sit in the sidebar. Docusaurus builds it automatically from this
-  site's folder structure.
-- Link to at least one related page.
-
-Cross-type links do more work than same-type links. A how-to page can
-link to its matching SOP and to a glossary term, which lives on a
-reference page. Cross-type links like these turn the four types,
-explanation, how-to, reference, and SOP, into one connected system
-instead of four separate silos.
-
-## How consistency is enforced
-
-These rules live in two places, not just this page. A project-scoped
-Claude Code skill,
-[`meridian-doc-standards`](https://github.com/anaysesardinha/portfolio/blob/main/.claude/skills/meridian-doc-standards/SKILL.md),
-encodes them too.
-
-I drafted every page in this sample with that skill active. The same
-checklist ran every time. Nothing depended on memory from page to page.
-
-The skill and this page state the same rules for different readers.
-Claude Code follows the skill step by step while drafting a page. This
-page explains the same rules, and why they exist, to a person.
 
 ## Related
 

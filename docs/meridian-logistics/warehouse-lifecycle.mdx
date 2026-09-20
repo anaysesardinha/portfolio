@@ -1,5 +1,5 @@
 ---
-title: The Warehouse Lifecycle
+title: The warehouse lifecycle
 description: How inventory moves through a Meridian warehouse, from inbound receiving to outbound distribution.
 sidebar_position: 3
 doc_type: explanation
@@ -16,7 +16,7 @@ export const lifecycleStages = [
   {
     id: 'receiving',
     label: 'Inbound receiving',
-    description: 'A shipment arrives and gets checked against its paperwork.',
+    description: 'A shipment arrives, and you check it against its paperwork.',
     href: '#inbound-receiving',
   },
   {
@@ -28,18 +28,18 @@ export const lifecycleStages = [
   {
     id: 'picking',
     label: 'Order picking & pack-out',
-    description: 'A pick list gets generated, then the order is picked, packed, and staged.',
+    description: 'Wayfinder WMS generates a pick list, and you pick, pack, and stage the order.',
     href: '#order-picking-and-pack-out',
   },
   {
     id: 'distribution',
     label: 'Outbound distribution',
-    description: 'The order gets a final check before handoff to the carrier.',
+    description: 'You give the order a final check before handoff to the carrier.',
     href: '#outbound-distribution',
   },
 ];
 
-# The Warehouse Lifecycle
+# The warehouse lifecycle
 
 :::info[Audience]
 This page is for Warehouse Operations staff and new hires learning how
@@ -51,6 +51,16 @@ stage moves inventory safely to the next one. This flow explains why
 any single procedure exists. The four stages flow in one direction:
 
 <TreeDiagram layout="flow" data={lifecycleStages} label="Warehouse lifecycle stages" />
+
+Here is the same flow as a quick-reference table. The sections below it
+go into more depth on each stage:
+
+| Stage | Key action | System/tool |
+|---|---|---|
+| Inbound receiving | Check the shipment against its paperwork and log it. | Wayfinder WMS |
+| Storage | Move inventory into ambient, climate-monitored, or bonded storage. | Wayfinder WMS |
+| Order picking & pack-out | Generate a pick list, then pick, pack, and stage the order. | Wayfinder WMS |
+| Outbound distribution | Verify the order one final time before handoff. | Outbound carrier |
 
 ## Inbound receiving
 
@@ -65,7 +75,7 @@ instead of creating workarounds on the dock.
 
 ## Storage
 
-Once received, inventory moves into one of three storage types:
+After you receive a shipment, inventory moves into one of three storage types:
 
 - **Ambient** storage, for goods with no temperature requirement.
 - **Climate-monitored** storage, for goods that need a controlled
@@ -73,16 +83,23 @@ Once received, inventory moves into one of three storage types:
 - **Bonded** storage, for goods held under customs control before duty is
   paid.
 
-A _stock keeping unit_ (SKU), the identifier for a distinct product,
-uses the storage type required by the client contract and the product
-itself. It does not depend on which space happens to be free that day.
+A stock keeping unit (SKU), the identifier for a distinct product,
+uses the storage type that the client contract and the product itself
+require. It does not depend on which space happens to be free that day.
 
 ## Order picking and pack-out
 
-When an order comes in, Wayfinder WMS generates a pick list using the
-picking strategy that SKU requires: FIFO, FEFO, or FMFO, all defined in
-the [glossary](/docs/meridian-logistics/reference/glossary). From
-there:
+When an order comes in, Wayfinder WMS generates a pick list using one
+of three picking strategies:
+
+- **FIFO** (first in, first out) ships the unit received first,
+  regardless of expiration date.
+- **FEFO** (first expired, first out) ships the unit closest to its
+  expiration date first.
+- **FMFO** (first manufactured, first out) ships the unit with the
+  earliest manufacture date first.
+
+From there:
 
 1. You pick the items.
 2. You pack them.
@@ -92,11 +109,12 @@ there:
 
 You verify packed orders against the original order one more time.
 Then you hand the order off to the outbound carrier. This final check
-catches a pick-and-pack error before it reaches the customer. That is why
-it exists as its own step, not an assumed part of packing.
+catches a pick-and-pack error before it reaches the customer. This
+requirement is why it exists as its own step, not an assumed part of
+packing.
 
 ## Related
 
-- [Process an Inbound Receipt Discrepancy](/docs/meridian-logistics/process-inbound-receipt-discrepancy)
-- [Storage Type Comparison](/docs/meridian-logistics/reference/storage-type-comparison)
+- [Process an inbound receipt discrepancy](/docs/meridian-logistics/process-inbound-receipt-discrepancy)
+- [Storage type comparison](/docs/meridian-logistics/reference/storage-type-comparison)
 - [SOP-101: Inbound receiving and put-away](/docs/meridian-logistics/sop-101-inbound-receiving-put-away)

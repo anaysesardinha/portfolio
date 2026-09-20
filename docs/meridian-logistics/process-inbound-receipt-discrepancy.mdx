@@ -1,5 +1,5 @@
 ---
-title: Process an Inbound Receipt Discrepancy
+title: Process an inbound receipt discrepancy
 description: Steps to take when a received shipment does not match its paperwork.
 sidebar_position: 4
 doc_type: how-to
@@ -10,57 +10,72 @@ review_cadence: Quarterly
 applies_to: "All Meridian fulfillment sites"
 ---
 
-# Process an Inbound Receipt Discrepancy
+# Process an inbound receipt discrepancy
 
 :::info[Audience]
 This page is for Warehouse Operations staff receiving inbound shipments.
 :::
 
 Use this guide when a shipment's count or condition does not match its
-_advance shipping notice_ (ASN), the document a supplier sends ahead of
+advance shipping notice (ASN), the document a supplier sends ahead of
 a shipment.
 
 This guide assumes you already know the basic receiving flow in [The
-Warehouse Lifecycle](/docs/meridian-logistics/warehouse-lifecycle).
+warehouse lifecycle](/docs/meridian-logistics/warehouse-lifecycle).
+
+## Prerequisites
+
+Before you start, confirm you have:
+
+- Access to the shipment's receipt record in Wayfinder WMS,
+  Meridian's warehouse management system
+- Permission to select **Log Discrepancy** and **Notify** on a receipt
+  record
+- A camera or phone to photograph any damaged units
 
 ## Steps
 
 Follow these steps as soon as you notice the mismatch:
 
 1. Stop put-away for the affected line items. Do not move mismatched
-   units into storage until the discrepancy is logged. Moving them first
-   makes the mismatch much harder to trace.
-2. Open the shipment's receipt record in
-   [Wayfinder WMS](/docs/meridian-logistics/reference/glossary).
+   units into storage until you log the discrepancy.
+2. Open the shipment's receipt record in Wayfinder WMS.
 3. Select **Log Discrepancy**. The system creates a discrepancy record
-   linked to that ASN.
+   and links it to that ASN.
 4. Recount the affected line items and enter the physical count. Wayfinder
-   WMS calculates the variance automatically once you save the count.
+   WMS calculates the variance automatically after you save the count.
 5. Photograph any damaged units and attach the photos to the discrepancy
    record.
 
 :::warning
-Do not select **Damaged** until photos are attached. A damage claim
+Do not select **Damaged** until you attach photos. A damage claim
 without visual evidence delays Client Services' resolution with the
 supplier.
 :::
 
-6. Select a discrepancy reason from the dropdown: **Short-ship**,
-   **Over-ship**, **Damaged**, or **Mislabeled**, all defined in the
-   [glossary](/docs/meridian-logistics/reference/glossary). The
-   discrepancy record moves to **Pending Review**.
+6. Select a discrepancy reason from the dropdown:
+
+   - **Short-ship**: a shipment that contains fewer units of a SKU
+     than its paperwork lists.
+   - **Over-ship**: a shipment that contains more units of a SKU than
+     its paperwork lists.
+   - **Damaged**: a received unit that arrives physically damaged.
+   - **Mislabeled**: a received unit whose label does not match its
+     actual SKU or contents.
+
+   The discrepancy record moves to **Pending Review**.
 7. Select **Notify** on the discrepancy record to notify the Client
-   Services contact for that account. This creates a timestamped record
-   that the client was informed. This record is separate from the
+   Services contact for that account. This action creates a timestamped
+   record that you informed the client. This record is separate from the
    internal discrepancy log.
 8. Resume put-away for any unaffected line items on the same shipment.
-   They do not need to wait on the discrepancy review. From here, the
-   record moves through Wayfinder WMS from **Pending Review** to
-   **Resolved** once Client Services confirms the client's response.
-   Affected units stay outside sellable inventory until that happens.
+   They do not need to wait on the discrepancy review. Your part of this
+   process ends here. Wayfinder WMS moves the record from **Pending
+   Review** to **Resolved** after Client Services confirms the client's
+   response, and the affected units become available for put-away at
+   that point.
 
 ## Related
 
-- [The Warehouse Lifecycle](/docs/meridian-logistics/warehouse-lifecycle)
+- [The warehouse lifecycle](/docs/meridian-logistics/warehouse-lifecycle)
 - [SOP-101: Inbound receiving and put-away](/docs/meridian-logistics/sop-101-inbound-receiving-put-away)
-- [Glossary](/docs/meridian-logistics/reference/glossary)

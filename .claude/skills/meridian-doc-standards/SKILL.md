@@ -168,19 +168,19 @@ Concrete rules:
   when another page already defined it. Readers rarely read pages in
   order, so a term cannot lean on a definition that lives elsewhere.
 - Domain jargon in play: FIFO, FEFO, FMFO, WMS, FTZ, SKU, bonded
-  warehouse, kitting, drayage, 3PL, RMA, PO, ASN, SLA. Treat the
-  Glossary reference page as the canonical definition.
+  warehouse, kitting, drayage, 3PL, RMA, PO, ASN, SLA. Define each one
+  inline the first time it appears on a page. There is no shared
+  glossary page to lean on.
 - When introducing an acronym or initialism inline, write the full term
   first and the acronym second, in parentheses: "a stock keeping unit
-  (SKU)," never "a SKU (stock keeping unit)." The Glossary table is the
-  exception: its Term column holds the acronym, since that is what a
-  reader looks up.
-- On an explanation or how-to page, define the term in its own short
-  sentence, or link the term's first mention to the Glossary. On an
-  SOP or a terse how-to step, prefer linking the term's first mention
-  straight to the Glossary instead of adding a defining sentence. A
-  defining sentence dropped into an imperative step reads as a detour
-  from the action the reader is mid-way through.
+  (SKU)," never "a SKU (stock keeping unit)."
+- Define every term inline the first time it appears on a page, even
+  inside a numbered step, an SOP procedure, or a bulleted UI option.
+  Use a short comma appositive right after the term: "a stock keeping
+  unit (SKU), the identifier for a distinct product," not a separate
+  sentence before or after the step. This keeps the definition in the
+  same clause as the action, so the reader never has to leave the page
+  to understand a term.
 
 ## 6. Bold, italics, and code: the gold-standard split
 
@@ -222,7 +222,7 @@ documentation, so this rule does not reach it.
 
 ## 7. Numbered steps (how-to guides and SOP Procedure sections)
 
-- Give one action per numbered step. A physical action paired with
+- Give one action per numbered step. A physical action that includes
   logging it in the system counts as one action, not two: "Count the
   cartons and enter the count," "Photograph the damage and attach the
   photos." The log is how the reader finishes the task, not a separate
@@ -257,9 +257,14 @@ Every page must:
   builds the sidebar from `_category_.json` files), with `sidebar_position` set.
 - Link to at least one other page through a "Related documents" section (SOPs)
   or a short "Related" section (everything else). Favor links across Diataxis
-  types (a how-to linking to its matching SOP and a glossary term) over links
-  within the same type. Cross-type links are what make the four sections read
-  as one system instead of four silos.
+  types (a how-to linking to its matching SOP and an explanation page) over
+  links within the same type. Cross-type links are what make the four
+  sections read as one system instead of four silos.
+- Keep that section a bare list of links, title text only, with no sentence
+  describing what each link covers. A reader scanning for where to go next
+  needs the link, not a summary of the destination page; that summary already
+  lives on the destination page itself. This rule applies to every page in
+  the portfolio, not only pages inside this sample.
 
 ## 10. Fixed domain vocabulary: reuse exactly, never rename
 
