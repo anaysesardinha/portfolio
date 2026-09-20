@@ -10,30 +10,30 @@ review_cadence: Quarterly
 applies_to: "All Meridian fulfillment sites"
 ---
 
-# Process an inbound receipt discrepancy
-
 :::info[Audience]
 This page is for Warehouse Operations staff receiving inbound shipments.
 :::
 
-Use this guide when a shipment's count or condition does not match its
-advance shipping notice (ASN), the document a supplier sends ahead of
-a shipment.
+# Process an inbound receipt discrepancy
 
-This guide assumes you already know the basic receiving flow in [The
+This page covers what to do when a shipment's actual count or
+condition doesn't match what's stated on its advance shipping notice
+(ASN), the document a supplier sends ahead of the shipment.
+
+It assumes you already know the basic receiving flow in [The
 warehouse lifecycle](/docs/meridian-logistics/warehouse-lifecycle).
 
 ## Prerequisites
 
 Before you start, confirm you have:
 
-- Access to the shipment's receipt record in Wayfinder WMS,
+- Access to view the shipment's receipt record in Wayfinder WMS,
   Meridian's warehouse management system
 - Permission to select **Log Discrepancy** and **Notify** on a receipt
   record
 - A camera or phone to photograph any damaged units
 
-## Steps
+## Resolve the discrepancy
 
 Follow these steps as soon as you notice the mismatch:
 
@@ -47,12 +47,6 @@ Follow these steps as soon as you notice the mismatch:
 5. Photograph any damaged units and attach the photos to the discrepancy
    record.
 
-:::warning
-Do not select **Damaged** until you attach photos. A damage claim
-without visual evidence delays Client Services' resolution with the
-supplier.
-:::
-
 6. Select a discrepancy reason from the dropdown:
 
    - **Short-ship**: a shipment that contains fewer units of a SKU
@@ -60,18 +54,23 @@ supplier.
    - **Over-ship**: a shipment that contains more units of a SKU than
      its paperwork lists.
    - **Damaged**: a received unit that arrives physically damaged.
+   :::warning
+   Do not select **Damaged** until you attach photos. A damage claim
+   without visual evidence delays Client Services' resolution with the
+   supplier.
+   :::
    - **Mislabeled**: a received unit whose label does not match its
      actual SKU or contents.
 
    The discrepancy record moves to **Pending Review**.
-7. Select **Notify** on the discrepancy record. This notifies the
-   Client Services contact for that account and creates a timestamped
-   record that you informed the client.
-8. Resume put-away for any unaffected line items on the same shipment;
-   they don't need to wait on the discrepancy review. Wayfinder WMS
-   moves the record from **Pending Review** to **Resolved** once
-   Client Services confirms the client's response, and the affected
-   units become available for put-away at that point.
+7. Select **Notify** on the discrepancy record. This alerts the
+   account's Client Services contact and timestamps that notification.
+8. Resume put-away for any unaffected line items on the shipment; they
+   don't need to wait on the review.
+
+Once Client Services confirms the client's response, Wayfinder WMS
+moves the record to **Resolved** and staff can put away the affected
+units.
 
 ## Related
 

@@ -10,13 +10,18 @@ review_cadence: Biannual
 applies_to: "All Meridian fulfillment sites"
 ---
 
+:::info[Audience]
+This page is for Warehouse Operations staff and new hires learning how
+inventory moves through a Meridian site.
+:::
+
 import TreeDiagram from '@site/src/components/TreeDiagram';
 
 export const lifecycleStages = [
   {
     id: 'receiving',
     label: 'Inbound receiving',
-    description: 'A shipment arrives, and you check it against its paperwork.',
+    description: 'A shipment arrives, and staff check it against its paperwork.',
     href: '#inbound-receiving',
   },
   {
@@ -28,23 +33,18 @@ export const lifecycleStages = [
   {
     id: 'picking',
     label: 'Order picking & pack-out',
-    description: 'Wayfinder WMS generates a pick list, and you pick, pack, and stage the order.',
+    description: 'Wayfinder WMS generates a pick list, and staff pick, pack, and stage the order.',
     href: '#order-picking-and-pack-out',
   },
   {
     id: 'distribution',
     label: 'Outbound distribution',
-    description: 'You give the order a final check before handoff to the carrier.',
+    description: 'Staff give the order a final check before handoff to the carrier.',
     href: '#outbound-distribution',
   },
 ];
 
 # The warehouse lifecycle
-
-:::info[Audience]
-This page is for Warehouse Operations staff and new hires learning how
-inventory moves through a Meridian site.
-:::
 
 Every unit passes through four stages in a Meridian warehouse. Each
 stage moves inventory safely to the next one. This flow explains why
@@ -52,36 +52,38 @@ any single procedure exists. The four stages flow in one direction:
 
 <TreeDiagram layout="flow" data={lifecycleStages} label="Warehouse lifecycle stages" />
 
-Here is the same flow as a quick-reference table. The sections below it
+Here is the same flow as a quick-reference table. The following sections
 go into more depth on each stage:
 
 | Stage | Key action | System/tool |
 |---|---|---|
 | Inbound receiving | Check the shipment against its paperwork and log it. | Wayfinder WMS |
-| Storage | Move inventory into ambient, climate-monitored, or bonded storage. | Wayfinder WMS |
+| Storage | Move inventory into ambient, climate-monitored, cold chain, or bonded storage. | Wayfinder WMS |
 | Order picking & pack-out | Generate a pick list, then pick, pack, and stage the order. | Wayfinder WMS |
 | Outbound distribution | Verify the order one final time before handoff. | Outbound carrier |
 
 ## Inbound receiving
 
-A shipment arrives. You check it against its paperwork and log it into
-Wayfinder WMS, Meridian's warehouse management system. You verify
+A shipment arrives. Staff check it against its paperwork and log it
+into Wayfinder WMS, Meridian's warehouse management system, verifying
 quantity and condition before the shipment moves further.
 
-A mismatch becomes a receiving discrepancy. You resolve these by
-following the [process for inbound receipt
+A mismatch becomes a receiving discrepancy. Staff resolve it through
+the [process for inbound receipt
 discrepancies](/docs/meridian-logistics/process-inbound-receipt-discrepancy),
-instead of creating workarounds on the dock.
+not with a workaround on the dock.
 
 ## Storage
 
-After you receive a shipment, inventory moves into one of three storage types:
+Once staff finish receiving, inventory moves into one of four storage types:
 
 - **Ambient** storage, for goods with no temperature requirement.
 - **Climate-monitored** storage, for goods that need a controlled
   temperature range but not full cold-chain handling.
-- **Bonded** storage, for goods held under customs control before duty is
-  paid.
+- **Cold chain** storage, for perishable goods, such as food or
+  pharmaceuticals, that need refrigeration or freezing end to end.
+- **Bonded** storage, for goods under customs control, pending duty
+  payment.
 
 A stock keeping unit (SKU), the identifier for a distinct product,
 uses the storage type that the client contract and the product itself
@@ -92,29 +94,28 @@ require. It does not depend on which space happens to be free that day.
 When an order comes in, Wayfinder WMS generates a pick list using the
 picking strategy each SKU requires.
 
-:::info[Picking strategies]
 Wayfinder WMS calculates picking priority automatically, using one of
 three methods:
 
-- **FIFO** (first in, first out): ships the unit received first,
+- **FIFO** (first in, first out): ships whichever unit arrived first,
   regardless of expiration date.
 - **FEFO** (first expired, first out): ships the unit closest to its
   expiration date first.
 - **FMFO** (first manufactured, first out): ships the unit with the
   earliest manufacture date first.
-:::
 
-Once the list is ready, you pick the items, pack them into the
+Once the list is ready, staff pick the items, pack them into the
 appropriate shipping containers, and stage the completed order for
 outbound handling.
 
 ## Outbound distribution
 
-You verify packed orders against the original order one more time.
-Then you hand the order off to the outbound carrier. This final check
-catches a pick-and-pack error before it reaches the customer. This
-requirement is why it exists as its own step, not an assumed part of
-packing.
+Staff give the packed order one final check against the original
+order, then hand it off to the outbound carrier.
+
+This check catches a pick-and-pack error before it reaches the
+customer. That's why it exists as its own step, not an assumed part
+of packing.
 
 ## Related
 

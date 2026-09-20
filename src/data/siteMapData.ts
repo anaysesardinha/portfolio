@@ -53,7 +53,7 @@ export const siteMapData: DiagramNode = {
               id: 'reference',
               label: 'Reference',
               description: 'Lookup material: tables and definitions.',
-              href: '/docs/meridian-logistics/reference/audience-personas',
+              href: '/docs/meridian-logistics/reference/storage-type-comparison',
               kind: 'Reference',
             },
           ],

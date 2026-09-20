@@ -5,25 +5,42 @@ sidebar_position: 2
 doc_type: explanation
 audience: "Anyone evaluating the documentation standards behind this sample"
 owner: "Site maintainer"
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-20
 review_cadence: Annual
 applies_to: "This entire portfolio site"
 ---
 
 # Documentation Standards
 
-:::info[Audience]
-This page is for anyone evaluating the documentation standards behind
-this sample, including hiring managers and other technical writers.
-:::
-
 This guide states the rules behind the [Meridian Contract Logistics
 sample](/docs/meridian-logistics/about-this-sample) and why each rule
 exists.
 
+## Audience personas
+
+The sample writes for three personas. The following table lists each
+one, what they need from these docs, and their assumed technical
+level:
+
+| Persona | Role summary | Primary need from these docs | Technical level |
+|---|---|---|---|
+| Warehouse Operations | Front-line staff running receiving, storage, picking, and cycle counts | Exact, repeatable procedures: SOPs and how-to guides | Comfortable with Wayfinder WMS day to day; no assumed logistics jargon beyond terms each page defines in context |
+| Account Managers / Client Services | Client-facing staff managing contracts, SLAs, and escalations | Context for client conversations: explanation pages | Familiar with contract and SLA terms; limited exposure to warehouse-floor procedures |
+| New Hires | Staff onboarding into any of the above roles | Background before task instructions: explanation pages first, then how-to guides | Limited familiarity with Meridian-specific systems and terminology |
+
+These personas map to three rules for writing content:
+
+- Explanation pages assume a New Hire or Account Manager reading
+  without prior context.
+- How-to guides and SOPs assume a Warehouse Operations reader who
+  already completed onboarding.
+- Reference pages serve all three personas as lookup material for the
+  Meridian operation itself, such as storage requirements or contact
+  points, not as a starting point.
+
 ## Standards
 
-The sections below group every rule behind this sample, and why it
+The following sections group every rule behind this sample, and why it
 exists, by what each one governs.
 
 ### Structure and metadata
@@ -32,12 +49,12 @@ Rules that keep every page's shape and frontmatter predictable:
 
 | Rule | Why |
 |---|---|
-| Every page is exactly one Diataxis type: **explanation**, **how-to**, **reference**, or **SOP**. A page never mixes types. | Mixing types hides key details. Readers scanning a concept page for steps skip past one buried there. Readers scanning a how-to guide for steps miss a definition buried there. |
-| Every page carries a frontmatter schema, including `doc_type`, `owner`, `last_reviewed`, `review_cadence`, and `applies_to`. | Frontmatter lets tooling query which pages are overdue for review, which team owns a page, and which pages a new hire should read first. |
-| The `owner` field always names a role, such as "Warehouse Operations Manager," never a person. | People change jobs. A role survives a reorg. A named person goes stale once they leave that role. |
-| Every non-SOP page opens with an Audience admonition. SOPs state audience through their **Applies to** line instead. | Stating audience twice on the same SOP page would repeat the same fact for no reason. |
-| Every SOP follows the same template: Purpose, Prerequisites, Procedure, Troubleshooting, Related documents. | A fixed template removes a decision for new authors and speeds up an audit. Anyone can scan ten SOPs and know exactly where each section sits. |
-| **Owner**, **Last reviewed**, **Review cadence**, and **Applies to** each appear twice on an SOP: once in frontmatter, once in a table in the page body. | Frontmatter is what tooling reads. The table is what a person reads on the floor, not the page's raw metadata. |
+| Every page is exactly one Diataxis type: **explanation**, **how-to**, **reference**, or **SOP**. A page never mixes types. | Mixing types hides key details. A reader scanning a concept page for steps skips past them. A reader scanning a how-to guide for a definition misses it. |
+| Every page carries a frontmatter schema, including `doc_type`, `owner`, `last_reviewed`, `review_cadence`, and `applies_to`. | Frontmatter lets tooling find overdue pages, page owners, and where a new hire should start reading. |
+| The `owner` field always names a role, such as "Warehouse Operations Manager," never a person. | People change jobs. A role survives a reorg. A name doesn't. |
+| Every non-SOP page opens with an Audience admonition. SOPs state audience through their **Applies to** line instead. | An SOP already states audience in **Applies to**. Repeating it would add nothing. |
+| Every SOP follows the same template: Purpose, Prerequisites, Procedure, Troubleshooting, Related documents. | A fixed template removes a decision for new authors. It also speeds up an audit: every SOP puts each section in the same place. |
+| **Owner**, **Last reviewed**, **Review cadence**, and **Applies to** each appear twice on an SOP: once in frontmatter, once in a table in the page body. | Frontmatter is what tooling reads. The table is what a person reads on the floor. |
 
 ### Writing
 
@@ -66,13 +83,11 @@ Rules that keep every rule above from depending on memory:
 | Rule | Why |
 |---|---|
 | These rules live on this page and in a Claude Code skill, [`meridian-doc-standards`](https://github.com/anaysesardinha/portfolio/blob/main/.claude/skills/meridian-doc-standards/SKILL.md). | The same checklist runs every time someone drafts a page, so nothing depends on memory from page to page. |
-| A [`docs-standards` GitHub Actions job](https://github.com/anaysesardinha/portfolio/blob/main/.github/workflows/ci.yml) blocks a pull request if a page is missing a required frontmatter field, such as `owner` or `review_cadence`, breaks the SOP template, or has no link to another page. A separate `link-check` job blocks it on any broken internal link. | The skill helps at drafting time, but deadline pressure can still push someone to skip a rule that only lives in a skill or a person's memory. Deadline pressure cannot push past a CI check that fails the build. |
+| A [`docs-standards` GitHub Actions job](https://github.com/anaysesardinha/portfolio/blob/main/.github/workflows/ci.yml) blocks a pull request if a page is missing a required frontmatter field, such as `owner` or `review_cadence`, breaks the SOP template, or has no link to another page. A separate `link-check` job blocks it on any broken internal link. | The skill helps at drafting time, but deadline pressure can still push someone to skip a rule that lives only in a skill or a person's memory. Deadline pressure can't push past a CI check that fails the build. |
 
 ## Templates
 
-These are the literal formats the standards above produce.
-
-Every page carries this frontmatter:
+Every page starts with this frontmatter:
 
 ```yaml
 ---
@@ -86,15 +101,6 @@ last_reviewed: YYYY-MM-DD
 review_cadence: Quarterly | Biannual
 applies_to: "All Meridian fulfillment sites"
 ---
-```
-
-Every non-SOP page opens with this admonition; fill it in for that
-specific page:
-
-```
-:::info[Audience]
-This page is for Warehouse Operations and Client Services teams.
-:::
 ```
 
 Every SOP follows this exact structure:
@@ -118,4 +124,4 @@ Every SOP follows this exact structure:
 
 ## Related
 
-- [About this sample](/docs/meridian-logistics/about-this-sample)
+- [About this sample](/docs/meridian-logistics/about-this-sample): What Meridian Contract Logistics is, and why this sample exists.

@@ -186,30 +186,28 @@ matches how many terms you are defining at that point:
    the step. This keeps the definition in the same clause as the
    action, so the reader never has to leave the page to understand a
    term.
-2. **A set of three or more related terms: a titled callout.** When
+2. **A set of three or more related terms: a bulleted list.** When
    several terms form one cohesive set, such as the three picking
-   strategies, name the set in the surrounding prose, then hold the
-   definitions in a titled `:::info[...]` admonition right after that
-   sentence. A reader who already knows the terms can skip the box
-   without losing the narrative thread. Give each term its own bullet
-   inside the callout, bolded term first, then a colon:
+   strategies, name the set in the surrounding prose, then list the
+   definitions in a plain bulleted list right after that sentence.
+   Give each term its own bullet, bolded term first, then a colon:
 
    ```
-   :::info[Picking strategies]
    Wayfinder WMS calculates picking priority automatically, using one
    of three methods:
 
-   - **FIFO** (first in, first out): ships the unit received first,
-     regardless of expiration date.
+   - **FIFO** (first in, first out): ships whichever unit arrived
+     first, regardless of expiration date.
    - **FEFO** (first expired, first out): ships the unit closest to
      its expiration date first.
    - **FMFO** (first manufactured, first out): ships the unit with
      the earliest manufacture date first.
-   :::
    ```
 
-   Never use the callout pattern for one or two terms; that is what
-   the inline appositive is for.
+   Never wrap a term list in a `:::info[...]` callout; that pattern
+   is reserved for the Audience admonition (Section 3). Never use a
+   bulleted list for one or two terms either; that is what the inline
+   appositive is for.
 
 ## 6. Bold, italics, and code: the gold-standard split
 
