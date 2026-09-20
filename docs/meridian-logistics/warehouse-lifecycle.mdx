@@ -89,21 +89,24 @@ require. It does not depend on which space happens to be free that day.
 
 ## Order picking and pack-out
 
-When an order comes in, Wayfinder WMS generates a pick list using one
-of three picking strategies:
+When an order comes in, Wayfinder WMS generates a pick list using the
+picking strategy each SKU requires.
 
-- **FIFO** (first in, first out) ships the unit received first,
+:::info[Picking strategies]
+Wayfinder WMS calculates picking priority automatically, using one of
+three methods:
+
+- **FIFO** (first in, first out): ships the unit received first,
   regardless of expiration date.
-- **FEFO** (first expired, first out) ships the unit closest to its
+- **FEFO** (first expired, first out): ships the unit closest to its
   expiration date first.
-- **FMFO** (first manufactured, first out) ships the unit with the
+- **FMFO** (first manufactured, first out): ships the unit with the
   earliest manufacture date first.
+:::
 
-From there:
-
-1. You pick the items.
-2. You pack them.
-3. You stage them for outbound.
+Once the list is ready, you pick the items, pack them into the
+appropriate shipping containers, and stage the completed order for
+outbound handling.
 
 ## Outbound distribution
 
