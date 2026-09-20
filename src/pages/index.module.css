@@ -5,7 +5,7 @@
 
 .hero {
   padding: var(--wc-section-spacing) 0;
-  text-align: center;
+  text-align: left;
 }
 
 .heroInner {
@@ -36,13 +36,17 @@
   font-size: 1.05rem;
   color: var(--ifm-font-color-secondary);
   line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.heroLede:last-of-type {
   margin-bottom: 2.5rem;
 }
 
 .actions {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 1rem;
 }

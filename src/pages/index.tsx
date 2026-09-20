@@ -23,13 +23,13 @@ function HomepageHeader() {
           </span>
         </p>
         <p className={styles.heroLede}>
-          I care about making technical work easy to trust. I combine an
-          instructional design background with modern engineering
-          workflows to create clear, scalable documentation. I write
-          process guides, SOPs, and developer docs. I also build the
-          infrastructure behind them: docs-as-code pipelines, reviewer
-          automations, and AI-native integrations. The result: teams
-          ship faster, and no one has to guess.
+          I write documentation people trust. My instructional design
+          background shapes clear process guides, SOPs, and developer docs.
+        </p>
+        <p className={styles.heroLede}>
+          I also build what's behind them: docs-as-code pipelines, reviewer
+          automation, and AI-native tooling. Teams ship faster, with no
+          guesswork.
         </p>
         <div className={styles.actions}>
           <Link
