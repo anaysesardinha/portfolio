@@ -48,26 +48,65 @@ The documentation targets internal staff:
 
 It assumes a mixed technical level. It is not customer-facing.
 
+Two habits keep that mix working. Every page states its intended
+audience up front, so a reader knows fast whether a page is for them.
+Every domain term gets defined the first time it appears on a page,
+even when another page already defined it. A new hire never has to
+guess a term a warehouse veteran already knows.
+
+I defined these three audiences before writing a single page. Their
+differing needs, listed on [Audience
+Personas](/docs/meridian-logistics/reference/audience-personas), drove
+the sample's information architecture.
+
 ## How it is organized
 
 The sample follows the [Diataxis](https://diataxis.fr/) framework, split
 into four types that never mix on one page:
 
-- _Explanation_ for background a reader needs before acting.
-- _How-to guides_ for a single task, aimed at someone who already knows
-  the basics.
-- _Reference_ for lookup material: tables and definitions, no narrative.
-- _SOPs_ for procedures a team must run the same way every time.
+- **Explanation** for background a reader needs before acting.
+- **How-to guides** for a single task, aimed at someone who already
+  knows the basics.
+- **Reference** for lookup material: tables and definitions, no
+  narrative.
+- **SOPs** for procedures a team must run the same way every time.
 
 The [Documentation Standards](/docs/contributor-guide) page states the full set of
 standards behind this structure. It covers ownership, review cadence, and
 cross-linking.
 
-See [My process](/docs/meridian-logistics/my-process) for the reasoning
-behind specific choices. That includes why this sample uses one page per
-type instead of a full library, and how the audience personas were built.
+## Why one of each type, on one connected topic
+
+This sample covers one connected topic, inbound receiving and put-away,
+with exactly one page per Diataxis type:
+
+- One explanation page.
+- One how-to guide.
+- One reference page.
+- One SOP.
+
+Two reasons drive that scope:
+
+1. **Volume doesn't prove a template works.** One fully realized SOP
+   proves it as well as four would. A hiring manager needs to see
+   consistency, not quantity.
+2. **One shared topic lets a reader trace a real thread end to end:**
+
+   - The explanation page sets up why receiving and storage work the
+     way they do.
+   - The how-to guide handles the one failure mode that comes up during
+     receiving.
+   - The reference page defines where received goods get stored.
+   - The SOP ties all of it into one procedure.
+
+Four unrelated topics would show the same template four times, with no
+depth on any one process.
+
+The Glossary and Audience Personas pages stay in as supporting material.
+They serve every topic, not just this one, so they do not count as
+additional topic content.
 
 ## Related
 
 - [Documentation Standards](/docs/contributor-guide)
-- [My process](/docs/meridian-logistics/my-process)
+- [Audience Personas](/docs/meridian-logistics/reference/audience-personas)

@@ -29,13 +29,6 @@ export const siteMapData: DiagramNode = {
           kind: 'Sample',
           children: [
             {
-              id: 'process',
-              label: 'My Process',
-              description: 'Why the sample looks the way it does.',
-              href: '/docs/meridian-logistics/my-process',
-              kind: 'Process',
-            },
-            {
               id: 'explanation',
               label: 'Explanation',
               description: 'Background before acting.',
