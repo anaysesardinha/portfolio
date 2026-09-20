@@ -72,10 +72,12 @@ fact twice for no reason.
 ```markdown
 # SOP-XXX: [Title]
 
-**Owner:** [Role, never a person's name]
-**Last reviewed:** [Date]
-**Review cadence:** [Quarterly / Biannual]
-**Applies to:** [Which teams or sites]
+| Field | Value |
+|---|---|
+| Owner | [Role, never a person's name] |
+| Last reviewed | [Date] |
+| Review cadence | [Quarterly / Biannual] |
+| Applies to | [Which teams or sites] |
 
 ## Purpose
 One or two sentences. What this procedure achieves.
@@ -93,9 +95,9 @@ Common failure points and what to do about each.
 Links to other pages.
 ```
 
-Owner, Last reviewed, Review cadence, and Applies to appear both here as bold
-text and in frontmatter. That duplication is intentional, not sloppy:
-frontmatter serves tooling, this bold block serves the person reading the
+Owner, Last reviewed, Review cadence, and Applies to appear both here as a
+small table and in frontmatter. That duplication is intentional, not sloppy:
+frontmatter serves tooling, this table serves the person reading the
 page. If you write the Documentation Standards page's explanation of this pattern, state
 that the duplication is deliberate so it does not read as an oversight.
 
@@ -168,6 +170,11 @@ Concrete rules:
 - Domain jargon in play: FIFO, FEFO, FMFO, WMS, FTZ, SKU, bonded
   warehouse, kitting, drayage, 3PL, RMA, PO, ASN, SLA. Treat the
   Glossary reference page as the canonical definition.
+- When introducing an acronym or initialism inline, write the full term
+  first and the acronym second, in parentheses: "a stock keeping unit
+  (SKU)," never "a SKU (stock keeping unit)." The Glossary table is the
+  exception: its Term column holds the acronym, since that is what a
+  reader looks up.
 - On an explanation or how-to page, define the term in its own short
   sentence, or link the term's first mention to the Glossary. On an
   SOP or a terse how-to step, prefer linking the term's first mention
@@ -180,9 +187,11 @@ Concrete rules:
 This rule follows the Google developer style guide and the Microsoft
 Writing Style Guide. Both agree on the same split:
 
-- **Bold** marks a literal UI element or a fixed field label. Nothing
-  else.
-- _Italics_ mark a term the text is about to define, or a title.
+- **Bold** marks a literal UI element, a fixed field label, or a
+  category name at the start of a list item when the rest of the item
+  defines it.
+- _Italics_ mark a title, or a term the text is about to define inline,
+  mid-sentence, not at the start of a list item.
 - `Code font` marks something the reader types or copies exactly:
   commands, filenames, code.
 
@@ -194,16 +203,15 @@ What counts as bold in this sample:
 - A system-generated status value shown on screen: the record moves to
   **Pending Review**.
 - A field label in the fixed SOP template: **Owner:**, **Applies to:**.
+- A category name at the start of a list item, such as Explanation or
+  Reference, when the rest of the item defines it: **Explanation** for
+  background a reader needs.
 
 What does not count as bold, even though earlier drafts used it that
 way:
 
 - A role or team name, such as Warehouse Operations or Account Manager.
   It is not a UI element. Leave it as plain text.
-- A category name at the start of a list item, such as Explanation or
-  Reference, when the rest of the item defines it. Use italics instead:
-  _Explanation_ for background a reader needs. That matches the
-  first-mention-of-a-term rule both style guides use.
 - A whole sentence, for emphasis. Bold on every important sentence
   reads the same as bold on nothing: the reader loses the signal. If a
   sentence needs emphasis, lead with the point instead of decorating it.
@@ -268,7 +276,15 @@ Use tables or definition lists only. Avoid "you," "let's," or prose that
 explains why something is true; that belongs on an explanation page, which
 the reference page can link to.
 
-## 12. Disclose "this is fictional" exactly once
+## 12. Describe the current state, never its history
+
+State what a page, section, or scope is now. Do not narrate what it used
+to be ("an earlier version had four SOPs," "I cut it down to..."). A
+reader needs the current shape of things, not its edit history. Save
+that history for a commit message or a portfolio write-up outside the
+docs themselves.
+
+## 13. Disclose "this is fictional" exactly once
 
 Put the fictional-company disclosure on `about-this-sample.mdx` only. Do not
 repeat it on other pages. Repeating it reads as defensive and undercuts the
