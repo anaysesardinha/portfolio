@@ -24,13 +24,17 @@ function HomepageHeader() {
           </span>
         </p>
         <p className={styles.heroLede}>
-          I write documentation people trust. My instructional design
-          background shapes clear process guides, SOPs, and developer docs.
+          I'm a technical writer who builds the tooling that writers and
+          SMEs rely on. I spent over a decade teaching languages, always
+          focused on making complex material clear in English and
+          Portuguese. That instinct for learning design still drives my
+          work today, even as the medium has evolved.
         </p>
         <p className={styles.heroLede}>
-          I also build what's behind them: docs-as-code pipelines, reviewer
-          automation, and AI-native tooling. Teams ship faster, with no
-          guesswork.
+          I currently manage documentation for multiple clients across
+          SaaS, developer platforms, and operations teams. I write the
+          guides and API references, but my real focus is the scalable
+          systems behind them.
         </p>
         <div className={styles.actions}>
           <Link
