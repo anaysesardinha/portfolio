@@ -174,13 +174,42 @@ Concrete rules:
 - When introducing an acronym or initialism inline, write the full term
   first and the acronym second, in parentheses: "a stock keeping unit
   (SKU)," never "a SKU (stock keeping unit)."
-- Define every term inline the first time it appears on a page, even
-  inside a numbered step, an SOP procedure, or a bulleted UI option.
-  Use a short comma appositive right after the term: "a stock keeping
-  unit (SKU), the identifier for a distinct product," not a separate
-  sentence before or after the step. This keeps the definition in the
-  same clause as the action, so the reader never has to leave the page
-  to understand a term.
+
+Two patterns cover every term definition on a page. Pick the one that
+matches how many terms you are defining at that point:
+
+1. **Single term: inline appositive.** Define the term inline the
+   first time it appears, even inside a numbered step, an SOP
+   procedure, or a bulleted UI option. Use a short comma appositive
+   right after the term: "a stock keeping unit (SKU), the identifier
+   for a distinct product," not a separate sentence before or after
+   the step. This keeps the definition in the same clause as the
+   action, so the reader never has to leave the page to understand a
+   term.
+2. **A set of three or more related terms: a titled callout.** When
+   several terms form one cohesive set, such as the three picking
+   strategies, name the set in the surrounding prose, then hold the
+   definitions in a titled `:::info[...]` admonition right after that
+   sentence. A reader who already knows the terms can skip the box
+   without losing the narrative thread. Give each term its own bullet
+   inside the callout, bolded term first, then a colon:
+
+   ```
+   :::info[Picking strategies]
+   Wayfinder WMS calculates picking priority automatically, using one
+   of three methods:
+
+   - **FIFO** (first in, first out): ships the unit received first,
+     regardless of expiration date.
+   - **FEFO** (first expired, first out): ships the unit closest to
+     its expiration date first.
+   - **FMFO** (first manufactured, first out): ships the unit with
+     the earliest manufacture date first.
+   :::
+   ```
+
+   Never use the callout pattern for one or two terms; that is what
+   the inline appositive is for.
 
 ## 6. Bold, italics, and code: the gold-standard split
 
@@ -260,11 +289,12 @@ Every page must:
   types (a how-to linking to its matching SOP and an explanation page) over
   links within the same type. Cross-type links are what make the four
   sections read as one system instead of four silos.
-- Keep that section a bare list of links, title text only, with no sentence
-  describing what each link covers. A reader scanning for where to go next
-  needs the link, not a summary of the destination page; that summary already
-  lives on the destination page itself. This rule applies to every page in
-  the portfolio, not only pages inside this sample.
+- After each link, add one short line summarizing what that page covers.
+  Reuse that page's own frontmatter `description` field; it is already
+  written as a one-line summary. A reader scanning for where to go next
+  should know what's on the other side before they click. This rule
+  applies to every page in the portfolio, not only pages inside this
+  sample.
 
 ## 10. Fixed domain vocabulary: reuse exactly, never rename
 
