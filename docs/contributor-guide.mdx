@@ -93,10 +93,12 @@ Every SOP in this sample follows this exact structure:
 ```markdown
 # SOP-XXX: [Title]
 
-**Owner:** [Role, never a person's name]
-**Last reviewed:** [Date]
-**Review cadence:** [Quarterly / Biannual]
-**Applies to:** [Which teams or sites]
+| Field | Value |
+|---|---|
+| Owner | [Role, never a person's name] |
+| Last reviewed | [Date] |
+| Review cadence | [Quarterly / Biannual] |
+| Applies to | [Which teams or sites] |
 
 ## Purpose
 ## Prerequisites
@@ -105,12 +107,12 @@ Every SOP in this sample follows this exact structure:
 ## Related documents
 ```
 
-**Owner**, **Last reviewed**, **Review cadence**, and **Applies to** appear
-twice: once in frontmatter, once as bold text in the body. That duplication
-is deliberate, for two reasons:
+Owner, Last reviewed, Review cadence, and Applies to appear twice: once
+in frontmatter, once in a small table in the body. That duplication is
+deliberate, for two reasons:
 
 - Frontmatter is what tooling reads.
-- The bold text is what a person reads on the floor, not buried in page
+- The table is what a person reads on the floor, not buried in page
   metadata.
 
 A fixed template removes a decision. A new SOP author never has to invent
