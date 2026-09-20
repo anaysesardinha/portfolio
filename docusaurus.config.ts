@@ -79,7 +79,7 @@ const config: Config = {
           href: 'https://www.linkedin.com/in/anayse-sardinha-7881997b/',
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Anayse Sardinha. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Anayse Sardinha. Runs on Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

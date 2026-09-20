@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/anaysesardinha/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/anaysesardinha/portfolio/actions/workflows/ci.yml)
 
-A docs-as-code technical writing portfolio, built with
+A docs-as-code technical writing portfolio that uses
 [Docusaurus](https://docusaurus.io/). Content lives in Markdown/MDX,
 versions in Git, and ships through the same pull-request-and-CI workflow
 engineers use for code.
@@ -12,17 +12,17 @@ engineers use for code.
 - **[Meridian Contract Logistics](docs/meridian-logistics/about-this-sample.mdx)**,
   a fictional third-party logistics company. The sample covers one topic,
   inbound receiving and put-away, with one page each of explanation,
-  how-to, reference, and SOP content, organized with the
+  how-to, reference, and SOP content. It follows the
   [Diataxis](https://diataxis.fr/) framework.
 - **[Documentation Standards](docs/contributor-guide.mdx)** describing the
   writing standards behind that sample: frontmatter schema, named
   ownership, audience labeling, and the no-orphan-pages rule.
 - A project-scoped Claude Code skill at
   [`.claude/skills/meridian-doc-standards`](.claude/skills/meridian-doc-standards/SKILL.md),
-  used to keep the sample's pages consistent while drafting.
+  that keeps the sample's pages consistent while drafting.
 
 Run the site locally (see below) to browse these as rendered pages. A
-live deployed link will replace these paths once the site is published.
+live link will replace these paths once the site goes live.
 
 ## Setup
 
@@ -46,7 +46,7 @@ npm run build
 ```
 
 This generates static files into the `build` directory and serves as the
-production build. `onBrokenLinks` is set to `throw`, so the build fails on
+production build. `onBrokenLinks` uses `throw`, so the build fails on
 any broken internal link.
 
 Preview the production build locally with:

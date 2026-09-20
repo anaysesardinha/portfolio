@@ -57,7 +57,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={siteConfig.title}
-      description="Technical writing portfolio built docs-as-code with Docusaurus.">
+      description="Technical writing portfolio using docs-as-code with Docusaurus.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
