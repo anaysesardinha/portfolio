@@ -23,18 +23,6 @@ function HomepageHeader() {
             |
           </span>
         </p>
-        <p className={styles.heroLede}>
-          I'm a technical writer who builds the tooling that writers and
-          SMEs rely on. I spent over a decade teaching languages, always
-          focused on making complex material clear in English and
-          Portuguese. That instinct for learning design still drives my
-          work today, even as the medium has evolved.
-        </p>
-        <p className={styles.heroLede}>
-          I currently manage documentation for multiple clients across
-          SaaS, developer platforms, and operations teams. I write the
-          guides and API references, and also the systems behind them.
-        </p>
         <div className={styles.actions}>
           <Link
             className={clsx(styles.button, styles.buttonPrimary)}

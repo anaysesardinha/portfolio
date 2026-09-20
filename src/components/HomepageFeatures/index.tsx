@@ -16,34 +16,25 @@ const FeatureList: FeatureItem[] = [
     Icon: DocsAsCodeIcon,
     description: (
       <>
-        Write and manage docs in Markdown/MDX under Git version control.
-        Ship changes through pull request review and CI/CD pipelines.
-        Documentation receives the same rigorous workflows engineers use
-        for code.
+        Documentation treated like software. Authored in Markdown, managed in Git, and deployed via CI/CD.
       </>
     ),
   },
   {
-    title: 'API Docs & Interactive Tooling',
+    title: 'Interactive API Docs',
     Icon: PlaygroundIcon,
     description: (
       <>
-        Generate API references straight from OpenAPI specs. Configure
-        interactive playgrounds for direct API testing. Custom MCP
-        integrations allow AI coding assistants to query the docs
-        seamlessly.
+        Auto-generated from OpenAPI specs with built-in playgrounds for direct testing and AI integration.
       </>
     ),
   },
   {
-    title: 'AI-Native Review & Quality',
+    title: 'Automated Quality',
     Icon: ReviewIcon,
     description: (
       <>
-        Implement automated rulesets and AI agents. These agents
-        validate content, API writing, and code samples using
-        consistency scoring models. Automated link validation and SEO
-        checks run on every pull request.
+        AI agents and automated rules validate links, SEO, and content consistency on every pull request.
       </>
     ),
   },
@@ -69,6 +60,9 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className="text--center margin-bottom--lg">
+          <Heading as="h2">Principles this site is built on</Heading>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
