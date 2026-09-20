@@ -310,7 +310,9 @@
   line-height: 1.35;
 }
 
-/* Flow layout: the same cards, laid out as a single left-to-right run. */
+/* Flow layout: the same cards, laid out as a single top-to-bottom run.
+   A column never needs to wrap or scroll, so it stays a straight line
+   at any viewport width. */
 .flow {
   list-style: none;
   margin: 0;
@@ -318,10 +320,9 @@
   position: relative;
   z-index: 2;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 2.5rem 3rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
 }
 
 .flowStep {
@@ -358,11 +359,6 @@
     align-items: center;
     width: auto !important;
     max-width: none !important;
-  }
-
-  .flow {
-    flex-direction: column;
-    align-items: center;
   }
 
   .card {
