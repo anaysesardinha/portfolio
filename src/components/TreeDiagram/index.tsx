@@ -221,12 +221,16 @@ function Card({
   onClear: () => void;
   onPath?: boolean;
 }): ReactNode {
+  // An anchor into the current page should jump in place, not open a
+  // duplicate of the page in a new tab the way a cross-page sitemap
+  // link does.
+  const isAnchor = node.href.startsWith('#');
   return (
     <div className={styles.cardWrapper} ref={(el) => registerRef(node.id, el)}>
       <Link
         to={node.href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isAnchor ? undefined : '_blank'}
+        rel={isAnchor ? undefined : 'noopener noreferrer'}
         className={styles.card}
         data-on-path={onPath === undefined ? undefined : String(onPath)}
         onPointerEnter={() => onActivate(node.id, 'hover')}
@@ -236,10 +240,12 @@ function Card({
         {node.kind && <span className={styles.cardKind}>{node.kind}</span>}
         <span className={styles.cardLabel}>
           {node.label}
-          <span className={styles.cardIcon} aria-hidden="true">
-            {/* U+FE0E keeps this a glyph instead of a boxed emoji. */}
-            {'↗︎'}
-          </span>
+          {!isAnchor && (
+            <span className={styles.cardIcon} aria-hidden="true">
+              {/* U+FE0E keeps this a glyph instead of a boxed emoji. */}
+              {'↗︎'}
+            </span>
+          )}
         </span>
         <span className={styles.cardDescription}>{node.description}</span>
       </Link>
