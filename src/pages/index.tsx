@@ -33,8 +33,7 @@ function HomepageHeader() {
         <p className={styles.heroLede}>
           I currently manage documentation for multiple clients across
           SaaS, developer platforms, and operations teams. I write the
-          guides and API references, but my real focus is the scalable
-          systems behind them.
+          guides and API references, and also the systems behind them.
         </p>
         <div className={styles.actions}>
           <Link
