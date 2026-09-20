@@ -13,8 +13,8 @@ const BuildList: BuildItem[] = [
     description: (
       <>
         A suite of Claude Code tools handling meeting ingestion, content
-        validation, API review, code sample checks, and translation. It's
-        built on Diátaxis and plain language principles and uses a scoring
+        validation, API review, code sample checks, and translation. It
+        builds on Diátaxis and plain language principles and uses a scoring
         model to keep writers consistent.
       </>
     ),
@@ -23,7 +23,7 @@ const BuildList: BuildItem[] = [
     title: 'Interactive API tooling',
     description: (
       <>
-        Developer playgrounds built into the docs let users test API flows
+        Developer playgrounds inside the docs let users test API flows
         directly instead of just reading static references.
       </>
     ),
