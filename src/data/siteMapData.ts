@@ -2,7 +2,7 @@ import type {DiagramNode} from '@site/src/components/TreeDiagram';
 
 export const siteMapData: DiagramNode = {
   id: 'home',
-  label: 'Portfolio home',
+  label: 'Portfolio Home',
   description: 'The landing page, outside this documentation section.',
   href: '/',
   kind: 'Landing',
