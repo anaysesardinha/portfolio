@@ -5,7 +5,7 @@ sidebar_position: 3
 doc_type: explanation
 audience: "Warehouse Operations, New Hires"
 owner: "Warehouse Operations Manager"
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-21
 review_cadence: Biannual
 applies_to: "All Meridian fulfillment sites"
 ---
@@ -32,7 +32,7 @@ export const lifecycleStages = [
   },
   {
     id: 'picking',
-    label: 'Order picking & pack-out',
+    label: 'Order picking and pack-out',
     description: 'Wayfinder WMS generates a pick list, and staff pick, pack, and stage the order.',
     href: '#order-picking-and-pack-out',
   },
@@ -47,8 +47,10 @@ export const lifecycleStages = [
 # The warehouse lifecycle
 
 Every unit passes through four stages in a Meridian warehouse. Each
-stage moves inventory safely to the next one. This flow explains why
-any single procedure exists. The four stages flow in one direction:
+stage moves inventory safely to the next one. Every procedure in this
+documentation set protects one of these stage transitions. Seeing the
+full flow explains why that procedure exists. The four stages flow in
+one direction:
 
 <TreeDiagram layout="flow" data={lifecycleStages} label="Warehouse lifecycle stages" />
 
@@ -59,17 +61,25 @@ go into more depth on each stage:
 |---|---|---|
 | Inbound receiving | Check the shipment against its paperwork and log it. | Wayfinder WMS |
 | Storage | Move inventory into ambient, climate-monitored, cold chain, or bonded storage. | Wayfinder WMS |
-| Order picking & pack-out | Generate a pick list, then pick, pack, and stage the order. | Wayfinder WMS |
-| Outbound distribution | Verify the order one final time before handoff. | Outbound carrier |
+| Order picking and pack-out | Generate a pick list, then pick, pack, and stage the order. | Wayfinder WMS |
+| Outbound distribution | Verify the order one final time before handoff. | Outbound carrier, ClearLane Visibility |
 
 ## Inbound receiving
 
-A shipment arrives. Staff check it against its paperwork and log it
-into Wayfinder WMS, Meridian's warehouse management system, verifying
-quantity and condition before the shipment moves further.
+A shipment arrives with an advance shipping notice (ASN), the document
+a supplier sends ahead of a shipment. Staff check the shipment against
+the ASN and log it into Wayfinder WMS, Meridian's warehouse management
+system, before the shipment moves further.
 
-A mismatch becomes a receiving discrepancy. Staff resolve it through
-the [process for inbound receipt
+That check covers three things:
+
+- **Quantity**: the carton count matches the ASN.
+- **Condition**: cartons carry no visible damage.
+- **Paperwork**: the carrier's bill of lading, the document that lists
+  the cargo and the shipping terms, matches the ASN on file.
+
+A mismatch in any of these becomes a receiving discrepancy. Staff
+resolve it through the [process for inbound receipt
 discrepancies](/docs/meridian-logistics/process-inbound-receipt-discrepancy),
 not with a workaround on the dock.
 
@@ -113,9 +123,20 @@ outbound handling.
 Staff give the packed order one final check against the original
 order, then hand it off to the outbound carrier.
 
+That check verifies three things:
+
+- **Item accuracy**: the packed SKUs match the order.
+- **Quantity**: the packed count matches the order.
+- **Labeling**: the shipping label and any required paperwork match
+  the destination.
+
 This check catches a pick-and-pack error before it reaches the
 customer. That's why it exists as its own step, not an assumed part
 of packing.
+
+Once the carrier takes the shipment, Wayfinder WMS marks the order
+**Shipped**. The client can then track it in ClearLane Visibility,
+Meridian's client-facing real-time inventory visibility platform.
 
 ## Related
 
