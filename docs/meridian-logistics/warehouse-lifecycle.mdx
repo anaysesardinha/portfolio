@@ -46,30 +46,30 @@ export const lifecycleStages = [
 
 # The warehouse lifecycle
 
-Every unit passes through four stages in a Meridian warehouse. Each
-stage moves inventory safely to the next one. Every procedure in this
-documentation set protects one of these stage transitions. Seeing the
-full flow explains why that procedure exists. The four stages flow in
-one direction:
+Every unit in a Meridian warehouse moves through four stages:
+receiving, storage, picking and pack-out, and outbound distribution.
+Each stage hands inventory to the next only after a check confirms
+it's ready. Every procedure in this documentation set protects one of
+those handoffs. The stages flow in one direction:
 
 <TreeDiagram layout="flow" data={lifecycleStages} label="Warehouse lifecycle stages" />
 
-Here is the same flow as a quick-reference table. The following sections
-go into more depth on each stage:
+The following table repeats this flow for quick reference. Later
+sections go into more depth on each stage:
 
 | Stage | Key action | System/tool |
 |---|---|---|
 | Inbound receiving | Check the shipment against its paperwork and log it. | Wayfinder WMS |
 | Storage | Move inventory into ambient, climate-monitored, cold chain, or bonded storage. | Wayfinder WMS |
 | Order picking and pack-out | Generate a pick list, then pick, pack, and stage the order. | Wayfinder WMS |
-| Outbound distribution | Verify the order one final time before handoff. | Outbound carrier, ClearLane Visibility |
+| Outbound distribution | Verify the order one final time, then hand off to the carrier. | Wayfinder WMS, outbound carrier |
 
 ## Inbound receiving
 
 A shipment arrives with an advance shipping notice (ASN), the document
-a supplier sends ahead of a shipment. Staff check the shipment against
-the ASN and log it into Wayfinder WMS, Meridian's warehouse management
-system, before the shipment moves further.
+a supplier sends before the goods arrive. Staff check the delivery
+against the ASN and log it into Wayfinder WMS, Meridian's warehouse
+management system, before it moves further.
 
 That check covers three things:
 
@@ -96,16 +96,13 @@ Once staff finish receiving, inventory moves into one of four storage types:
   payment.
 
 A stock keeping unit (SKU), the identifier for a distinct product,
-uses the storage type that the client contract and the product itself
+uses the storage type its client contract and its own properties
 require. It does not depend on which space happens to be free that day.
 
 ## Order picking and pack-out
 
-When an order comes in, Wayfinder WMS generates a pick list using the
-picking strategy each SKU requires.
-
-Wayfinder WMS calculates picking priority automatically, using one of
-three methods:
+When an order comes in, Wayfinder WMS builds a pick list and sets each
+item's priority automatically, using one of three methods:
 
 - **FIFO** (first in, first out): ships whichever unit arrived first,
   regardless of expiration date.
@@ -114,9 +111,11 @@ three methods:
 - **FMFO** (first manufactured, first out): ships the unit with the
   earliest manufacture date first.
 
-Once the list is ready, staff pick the items, pack them into the
-appropriate shipping containers, and stage the completed order for
-outbound handling.
+Perishable SKUs in cold chain storage typically ship FEFO or FMFO.
+SKUs with no expiration concern typically ship FIFO.
+
+Once the list is ready, staff pick the items, pack them into shipping
+containers, and stage the completed order for outbound handling.
 
 ## Outbound distribution
 
