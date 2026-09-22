@@ -22,9 +22,9 @@ The sample writes for three personas:
 
 - **Warehouse Operations**: front-line staff running receiving,
   storage, picking, and cycle counts. They need exact, repeatable
-  procedures, so they read SOPs and how-to guides. They already work
-  in Wayfinder WMS day to day, so pages should assume no logistics
-  jargon beyond what each page defines in context.
+  procedures, so they read SOPs and how-to guides. They already know
+  Wayfinder WMS day to day, but carry no assumed logistics vocabulary
+  beyond what each page defines in context.
 - **Account Managers / Client Services**: client-facing staff managing
   contracts, SLAs, and escalations. They need context for client
   conversations, so they read explanation pages. They know contract
@@ -47,8 +47,8 @@ These personas map to three rules for writing content:
 
 ## Standards
 
-The following sections group every rule behind this sample, and why it
-exists, by what each one governs.
+The following sections group the rules by what they govern: page
+structure, writing, cross-linking, and enforcement.
 
 ### Structure and metadata
 
@@ -85,12 +85,20 @@ Rules that connect the four page types into one system:
 
 ### Enforcement
 
-Rules that keep every rule above from depending on memory:
+Two mechanisms keep every rule above from depending on memory.
 
-| Rule | Why |
-|---|---|
-| These rules live on this page and in a Claude Code skill, [`meridian-doc-standards`](https://github.com/anaysesardinha/portfolio/blob/main/.claude/skills/meridian-doc-standards/SKILL.md). | The same checklist runs every time someone drafts a page, so nothing depends on memory from page to page. |
-| A [`docs-standards` GitHub Actions job](https://github.com/anaysesardinha/portfolio/blob/main/.github/workflows/ci.yml) blocks a pull request if a page is missing a required frontmatter field, such as `owner` or `review_cadence`, breaks the SOP template, or has no link to another page. A separate `link-check` job blocks it on any broken internal link. | The skill helps at drafting time, but deadline pressure can still push someone to skip a rule that lives only in a skill or a person's memory. Deadline pressure can't push past a CI check that fails the build. |
+These rules live on this page and in a Claude Code skill,
+[`meridian-doc-standards`](https://github.com/anaysesardinha/portfolio/blob/main/.claude/skills/meridian-doc-standards/SKILL.md).
+The same checklist runs every time someone drafts a page. Nothing
+depends on memory from page to page.
+
+A [`docs-standards` GitHub Actions
+job](https://github.com/anaysesardinha/portfolio/blob/main/.github/workflows/ci.yml)
+checks every pull request. It fails the build if a page is missing a
+required frontmatter field, such as `owner` or `review_cadence`. It
+also fails the build if a page breaks the SOP template or has no link
+to another page. A separate `link-check` job fails the build on any
+broken internal link.
 
 ## Templates
 
