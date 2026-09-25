@@ -9,20 +9,21 @@ engineers use for code.
 
 ## What's here
 
-- **[Meridian Contract Logistics](docs/meridian-logistics/about-this-sample.mdx)**,
+- **[Meridian Contract Logistics](https://anaysesardinha.github.io/portfolio/docs/meridian-logistics/about-this-sample)**,
   a fictional third-party logistics company. The sample covers one topic,
   inbound receiving and put-away, with one page each of explanation,
   how-to, reference, and SOP content. It follows the
   [Diataxis](https://diataxis.fr/) framework.
-- **[Documentation Standards](docs/contributor-guide.mdx)** describing the
+- **[Documentation standards](https://anaysesardinha.github.io/portfolio/docs/contributor-guide)** describing the
   writing standards behind that sample: frontmatter schema, named
   ownership, audience labeling, and the no-orphan-pages rule.
 - A project-scoped Claude Code skill at
   [`.claude/skills/meridian-doc-standards`](.claude/skills/meridian-doc-standards/SKILL.md),
   that keeps the sample's pages consistent while drafting.
 
-Run the site locally (see below) to browse these as rendered pages. A
-live link will replace these paths once the site goes live.
+Browse the live site at
+[anaysesardinha.github.io/portfolio](https://anaysesardinha.github.io/portfolio/),
+or run it locally (see below) to preview changes before they deploy.
 
 ## Setup
 

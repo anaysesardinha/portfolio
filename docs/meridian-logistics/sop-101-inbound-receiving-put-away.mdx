@@ -5,7 +5,7 @@ sidebar_position: 5
 doc_type: sop
 audience: "Warehouse Operations"
 owner: "Warehouse Operations Manager"
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-25
 review_cadence: Quarterly
 applies_to: "All Meridian fulfillment sites"
 ---
@@ -38,8 +38,10 @@ Before starting this procedure, confirm you have:
 
 Follow these steps in order for every inbound shipment:
 
-1. Confirm the ASN in Wayfinder WMS matches the carrier's bill of lading
-   before unloading. Wayfinder WMS marks the shipment as **Expected**.
+1. Confirm the ASN in Wayfinder WMS matches the carrier's bill of
+   lading, the shipping document that lists the cargo and delivery
+   terms, before unloading. Wayfinder WMS marks the shipment as
+   **Expected**.
 2. Unload the shipment onto the receiving dock.
 3. Count the received cartons against the ASN's carton count and enter
    the count in Wayfinder WMS. Wayfinder WMS marks the shipment as
@@ -65,7 +67,7 @@ Common failure points in this procedure, and what to do about each:
 
 | Problem | What to do |
 |---|---|
-| ASN does not match the carrier's paperwork | Do not unload. Contact the Client Services contact for that account before accepting the shipment. |
+| ASN does not match the carrier's bill of lading | Do not unload. Contact the Client Services contact for that account before accepting the shipment. |
 | Wayfinder WMS shows no ASN on file | Hold the shipment at the dock and notify your shift supervisor. |
 | A line item's count or condition does not match its ASN | Do not assign it a storage location. Follow [Process an inbound receipt discrepancy](/docs/meridian-logistics/process-inbound-receipt-discrepancy) for that item instead. |
 | Suggested put-away location is already occupied | Scan the location you actually use instead of the suggestion. Wayfinder WMS updates the record automatically. |
